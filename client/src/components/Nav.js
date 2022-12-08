@@ -5,27 +5,27 @@ function Nav({ currentPage, pageChange }) {
     <ul style={{ float: "right" }} className="nav nav-tabs">
       <li className="nav-item">
         <a
-          href="#home"
-          onClick={() => pageChange("Home")}
-          className={currentPage === "Home" ? "nav-link active" : "nav-link"}
+          href="#about"
+          onClick={() => pageChange("About")}
+          className={currentPage === "About" ? "nav-link active" : "nav-link"}
         >
-          Home
+          About
         </a>
       </li>
       <li className="nav-item">
         <a
-          href="#portfolio"
-          onClick={() => pageChange("Portfolio")}
+          href="#adopt"
+          onClick={() => pageChange("Adopt")}
           className={
-            currentPage === "Portfolio" ? "nav-link active" : "nav-link"
+            currentPage === "Adopt" ? "nav-link active" : "nav-link"
           }
         >
-          Portfolio
+          Adopt
         </a>
       </li>
       <li className="nav-item">
         <a
-          href="#Contact"
+          href="#contact"
           onClick={() => pageChange("Contact")}
           className={currentPage === "Contact" ? "nav-link active" : "nav-link"}
         >
@@ -34,11 +34,11 @@ function Nav({ currentPage, pageChange }) {
       </li>
       <li className="nav-item">
         <a
-          href="#Resume"
-          onClick={() => pageChange("Resume")}
-          className={currentPage === "Resume" ? "nav-link active" : "nav-link"}
+          href="#about"
+          onClick={() => pageChange("About")}
+          className={currentPage === "About" ? "nav-link active" : "nav-link"}
         >
-          Resume
+          About
         </a>
       </li>
     </ul>

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Nav from "./Nav";
 import Header from "./Header";
 import About from "./pages/About";
+import Adopt from "./pages/Adopt";
+import Contact from "./pages/Contact"
 import Footer from "./Footer";
 
 export default function Container() {
@@ -10,11 +12,11 @@ export default function Container() {
     if (currentPage === "About") {
       return <About />;
     }
-    if (currentPage === "About") {
-      return <About />;
+    if (currentPage === "Adopt") {
+      return <Adopt />;
     }
-    if (currentPage === "About") {
-      return <About />;
+    if (currentPage === "Contact") {
+      return <Contact />;
     }
     return <About />;
   };
