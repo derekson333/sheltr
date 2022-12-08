@@ -38,7 +38,7 @@ const typeDefs = gql`
         application: Application
     }
 
-    type Mutation: {
+    type Mutation {
         addUser(username: String!, email: String!, password: String!): User
         removeUser(userId: ID!): User
         addAnimal(name: String!, age: Int!, sex: String!, species: String!, breed: String, familyFriendly: Boolean): Animal
