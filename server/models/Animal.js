@@ -13,7 +13,7 @@ const animalSchema = new Schema({
         type: String,
         required: true
     },
-    type: {
+    species: {
         type: String,
         required: true
     },
@@ -26,10 +26,12 @@ const animalSchema = new Schema({
         required: true,
         default: true
     },
-    applications: {
-        type: Schema.Types.ObjectId,
-        ref: 'Application'
-    },
+    applications: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Application'
+        }
+    ],
     adoption: {
         type: Schema.Types.ObjectId,
         ref: 'User'

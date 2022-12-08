@@ -5,10 +5,9 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         users: async () => {
-            return User.find().populate('applications').populate('adoptions')
+            return User.find()
         }
-    },
-    Mutation: {},
+    }
 };
 
 module.exports = resolvers;
