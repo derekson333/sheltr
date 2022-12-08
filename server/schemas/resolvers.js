@@ -31,7 +31,7 @@ const resolvers = {
         },
 
         addAnimal: async (parent, { name, age, sex, species, breed, familyFriendly }) => {
-            return Animal.create({ name, age, sex, species, breed, familyFriendly })
+            return Animal.create({ name, age, sex, species, breed, familyFriendly });
         },
 
         removeAnimal: async (parent, { animalId }) => {
