@@ -13,24 +13,24 @@ const userSchema = new Schema({
         required: true,
         unique: true,
         match: [/.+@.+\..+/, 'Must match an email address!'],
-      },
-      password: {
+    },
+    password: {
         type: String,
         required: true,
         minlength: 5,
-      },
-      applications: [
+    },
+    applications: [
         {
             type: Schema.Types.ObjectId,
             ref: 'Application'
         }
-      ],
-      adoptions: [
+    ],
+    adoptions: [
         {
             type: Schema.Types.ObjectId,
             ref: 'Animal'
         }
-      ]
+    ]
 });
 
 userSchema.pre('save', async function (next) {
