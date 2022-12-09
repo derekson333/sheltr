@@ -48,11 +48,12 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        addUser(username: String!, email: String!, password: String!): User
+        addUser(username: String!, email: String!, password: String!): Auth
         removeUser(userId: ID!): User
         addAnimal(name: String!, age: Int!, sex: String!, species: String!, breed: String, familyFriendly: Boolean): Animal
         removeAnimal(animalId: ID!): Animal
         addApplication(applicant: ID!, adoptee: ID!): Application
+        login()
     }
 `;
 
