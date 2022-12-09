@@ -14,7 +14,7 @@ const typeDefs = gql`
         name: String!
         age: Int!
         sex: String!
-        species: String!
+        animalType: String!
         breed: String
         familyFriendly: Boolean
         applications: [Application]

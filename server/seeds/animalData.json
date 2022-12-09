@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Max",
+        "age": 1,
+        "sex": "male",
+        "animalType": "dog",
+        "breed": "Labrador Retriever",
+        "familyFriendly": true
+    },
+    {
+        "name": "Bella",
+        "age": 2,
+        "sex": "female",
+        "animalType": "dog",
+        "breed": "German Shepherd",
+        "familyFriendly": true
+    },
+    {
+        "name": "Buddy",
+        "age": 3,
+        "sex": "male",
+        "animalType": "dog",
+        "breed": "Beagle",
+        "familyFriendly": true
+    },
+    {
+        "name": "Lucy",
+        "age": 4,
+        "sex": "female",
+        "animalType": "dog",
+        "breed": "French Bulldog",
+        "familyFriendly": true
+    },
+    {
+        "name": "Oliver",
+        "age": 1,
+        "sex": "male",
+        "animalType": "cat",
+        "breed": "American Shorthair",
+        "familyFriendly": true
+    },
+    {
+        "name": "Nala",
+        "age": 2,
+        "sex": "female",
+        "animalType": "cat",
+        "breed": "Abyssinian",
+        "familyFriendly": true
+    },
+    {
+        "name": "Simba",
+        "age": 3,
+        "sex": "male",
+        "animalType": "cat",
+        "breed": "Maine Coon",
+        "familyFriendly": true
+    },
+    {
+        "name": "Callie",
+        "age": 4,
+        "sex": "female",
+        "animalType": "cat",
+        "breed": "Scottish Fold",
+        "familyFriendly": true
+    },
+    {
+        "name": "Zazu",
+        "age": 1,
+        "sex": "male",
+        "animalType": "bird",
+        "breed": "African Red-Billed Hornbill",
+        "familyFriendly": true
+    },
+    {
+        "name": "Cybird",
+        "age": 2,
+        "sex": "female",
+        "animalType": "bird",
+        "breed": "Parrot",
+        "familyFriendly": true
+    }
+]

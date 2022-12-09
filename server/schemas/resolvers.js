@@ -30,8 +30,8 @@ const resolvers = {
             return User.findOneAndDelete({ _id: userId });
         },
 
-        addAnimal: async (parent, { name, age, sex, species, breed, familyFriendly }) => {
-            return Animal.create({ name, age, sex, species, breed, familyFriendly });
+        addAnimal: async (parent, { name, age, sex, animalType, breed, familyFriendly }) => {
+            return Animal.create({ name, age, sex, animalType, breed, familyFriendly });
         },
 
         removeAnimal: async (parent, { animalId }) => {
