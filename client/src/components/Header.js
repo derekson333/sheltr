@@ -10,7 +10,7 @@ import "../css/styles.css";
 function Header({ currentPage, pageChange }) {
   return (
     <>
-      <Navbar id='header' bg="light" expand="lg">
+      <Navbar variant="dark" id='header' bg="light" expand="lg">
         <Container fluid>
           <Navbar.Brand id="heading" href="#">
             Adoptimals
@@ -60,7 +60,7 @@ function Header({ currentPage, pageChange }) {
                 Donate
               </Nav.Link>
               <NavDropdown
-                variant="outline-success"
+                
                 title="Account"
                 id="navbarScrollingDropdown"
               >
@@ -98,7 +98,7 @@ function Header({ currentPage, pageChange }) {
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="success">Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

@@ -32,7 +32,7 @@ export default function Container() {
 
   return (
     <div>
-      <header>
+      <header id='header'>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <Header currentPage={currentPage} pageChange={handlePageChange}/>
         </nav>
