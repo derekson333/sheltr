@@ -45,7 +45,7 @@ const typeDefs = gql`
     type Query {
         user: User
         animals: [Animal]
-        animal: Animal
+        animal(id: ID!): Animal
         application: Application
     }
 
@@ -53,7 +53,7 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
         removeUser(userId: ID!): User
         addAnimal(name: String!, age: Int!, sex: String!, species: String!, breed: String, familyFriendly: Boolean): Animal
-        removeAnimal(animalId: ID!): Animal
+        removeAnimal(id: ID!): Animal
         addApplication(applicant: ID!, adoptee: ID!): Application
         login(email: String!, password: String!): Auth
     }
