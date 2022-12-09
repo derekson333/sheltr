@@ -21,8 +21,12 @@ const resolvers = {
             return await Animal.findById(args.id);
         },
 
-        application: async (parent, { applicationId }) => {
-            return await Application.findById(applicationId)
+        application: async (parent, args) => {
+            return await Application.findById(args.animalId)
+        },
+
+        applications: async (parent, args) => {
+            return await Application.find({ adoptee: args.id})
         }
     },
 
