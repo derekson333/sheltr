@@ -6,19 +6,19 @@ const resolvers = {
     Query: {
         // For dev only
         users: async () => {
-            return await User.find();
+            return await User.find().populate('applications').populate('adoptions');
         },
 
         user: async (parent, args) => {
-            return await User.findById(args.id);
+            return await User.findById(args.id).populate('applications').populate('adoptions');
         },
 
         animals: async () => {
-            return await Animal.find();
+            return await Animal.find().populate('applications').populate('adoption');
         },
 
         animal: async (parent, args) => {
-            return await Animal.findById(args.id);
+            return await Animal.findById(args.id).populate('applications').populate('adoption');
         },
 
         application: async (parent, args) => {
@@ -26,7 +26,7 @@ const resolvers = {
         },
 
         applications: async (parent, args) => {
-            return await Application.find({ adoptee: args.id})
+            return await Application.find({ adoptee: args.id })
         }
     },
 
