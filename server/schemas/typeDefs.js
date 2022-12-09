@@ -11,6 +11,7 @@ const typeDefs = gql`
     }
 
     type Animal {
+        _id: ID!
         name: String!
         age: Int!
         sex: String!
@@ -22,6 +23,7 @@ const typeDefs = gql`
     }
 
     type Application {
+        _id: ID!
         applicant: User
         adoptee: Animal
         streetAddress: String!
