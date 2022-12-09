@@ -31,23 +31,23 @@ const resolvers = {
 
         removeUser: async (parent, { userId }, context) => {
             if (context.user) {
-                return User.findOneAndDelete({ _id: userId });
+                return await User.findOneAndDelete({ _id: userId });
             }
 
             throw new AuthenticationError('Not logged in');
         },
 
         addAnimal: async (parent, { name, age, sex, animalType, breed, familyFriendly }) => {
-            return Animal.create({ name, age, sex, animalType, breed, familyFriendly });
+            return await Animal.create({ name, age, sex, animalType, breed, familyFriendly });
         },
 
         removeAnimal: async (parent, { animalId }) => {
-            return Animal.findOneAndDelete({ _id: animalId });
+            return await Animal.findOneAndDelete({ _id: animalId });
         },
 
         addApplication: async (parent, { applicant, adoptee }, context) => {
             if (context.user) {
-                return Application.create({ applicant, adoptee });
+                return await Application.create({ applicant, adoptee });
             }
 
             throw new AuthenticationError('Not logged in');
