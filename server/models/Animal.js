@@ -13,7 +13,7 @@ const animalSchema = new Schema({
         type: String,
         required: true
     },
-    species: {
+    animalType: {
         type: String,
         required: true
     },
