@@ -27,11 +27,11 @@ const typeDefs = gql`
         streetAddress: String!
         city: String!
         state: String!
-        zip: Number!
-        phone: Number!
+        zip: INT!
+        phone: INT!
         rent: Boolean!
-        children: Number!
-        numberOtherPets: Number!
+        children: INT!
+        numberOtherPets: INT!
         typeOtherPets: String 
     }
 
