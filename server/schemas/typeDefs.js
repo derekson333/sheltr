@@ -24,6 +24,15 @@ const typeDefs = gql`
     type Application {
         applicant: User
         adoptee: Animal
+        streetAddress: String!
+        city: String!
+        state: String!
+        zip: Number!
+        phone: Number!
+        rent: Boolean!
+        children: Number!
+        numberOtherPets: Number!
+        typeOtherPets: String 
     }
 
     type Auth {
