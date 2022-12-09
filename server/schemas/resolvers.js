@@ -12,8 +12,8 @@ const resolvers = {
             return await Animal.find();
         },
 
-        animal: async (parent, { animalId }) => {
-            return await Animal.findById(animalId);
+        animal: async (parent, args) => {
+            return await Animal.findById(args.id);
         },
 
         application: async (parent, { applicationId }) => {
