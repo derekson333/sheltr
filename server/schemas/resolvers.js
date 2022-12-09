@@ -4,8 +4,13 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-        user: async (parent, { userId }) => {
-            return await User.findById(userId);
+        // For dev only
+        users: async () => {
+            return await User.find();
+        },
+
+        user: async (parent, args) => {
+            return await User.findById(args.id);
         },
 
         animals: async () => {
