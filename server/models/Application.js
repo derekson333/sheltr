@@ -29,14 +29,6 @@ const applicationSchema = new Schema({
         type: Number,
         required: true
     },
-    employer: {
-        type: String,
-        required: false
-    },
-    employerPhone: {
-        type: Number,
-        required: false
-    },
     rent: {
         type: Boolean,
         required: true
