@@ -47,7 +47,8 @@ const typeDefs = gql`
         user(id: ID!): User
         animals: [Animal]
         animal(id: ID!): Animal
-        application: Application
+        application(id: ID!): Application
+        applications(animalId: ID!): [Application]
     }
 
     type Mutation {
