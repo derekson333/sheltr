@@ -22,12 +22,19 @@ const resolvers = {
     },
 
     Mutation: {
-        addUser: async (parent,  { username, email, password }) => {
-            return User.create({ username, email, password });
+        addUser: async (parent, { username, email, password }) => {
+            const user = await User.create({ username, email, password });
+            const token = signToken(user);
+
+            return { token, user };
         },
 
-        removeUser: async (parent, { userId }) => {
-            return User.findOneAndDelete({ _id: userId });
+        removeUser: async (parent, { userId }, context) => {
+            if (context.user) {
+                return User.findOneAndDelete({ _id: userId });
+            }
+
+            throw new AuthenticationError('Not logged in');
         },
 
         addAnimal: async (parent, { name, age, sex, animalType, breed, familyFriendly }) => {
@@ -38,8 +45,30 @@ const resolvers = {
             return Animal.findOneAndDelete({ _id: animalId });
         },
 
-        addApplication: async (parent, { applicant, adoptee }) => {
-            return Application.create({ applicant, adoptee });
+        addApplication: async (parent, { applicant, adoptee }, context) => {
+            if (context.user) {
+                return Application.create({ applicant, adoptee });
+            }
+
+            throw new AuthenticationError('Not logged in');
+        },
+
+        login: async (parent, { email, password }) => {
+            const user = await User.findOne({ email });
+
+            if (!user) {
+                throw new AuthenticationError('Incorrect credentials');
+            }
+
+            const correctPw = await user.isCorrectPassword(password);
+
+            if (!correctPw) {
+                throw new AuthenticationError('Incorrect credentials');
+            }
+
+            const token = signToken(user);
+
+            return { token, user };
         }
     }
 };
