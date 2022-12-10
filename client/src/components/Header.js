@@ -10,12 +10,12 @@ import "../css/styles.css";
 function Header({ currentPage, pageChange }) {
   return (
     <>
-      <Navbar id='header' bg="light" expand="lg">
+      <Navbar variant="dark" id="header" bg="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand id="heading" href="#">
             Adoptimals
           </Navbar.Brand>
-          <span class="navbar-text">Adopt a pet today!</span>
+          <span class="navbar-text text-info italic">Adopt a pet today!</span>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
