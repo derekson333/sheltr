@@ -11,6 +11,7 @@ const typeDefs = gql`
     }
 
     type Animal {
+        _id: ID!
         name: String!
         age: Int!
         sex: String!
@@ -22,8 +23,18 @@ const typeDefs = gql`
     }
 
     type Application {
+        _id: ID!
         applicant: User
         adoptee: Animal
+        streetAddress: String!
+        city: String!
+        state: String!
+        zip: Int!
+        phone: Int!
+        rent: Boolean!
+        children: Int!
+        numberOtherPets: Int!
+        typeOtherPets: String 
     }
 
     type Auth {
@@ -32,18 +43,21 @@ const typeDefs = gql`
     }
 
     type Query {
-        user: User
+        users: [User]
+        user(id: ID!): User
         animals: [Animal]
-        animal: Animal
-        application: Application
+        animal(id: ID!): Animal
+        application(id: ID!): Application
+        applications(animalId: ID!): [Application]
     }
 
     type Mutation {
-        addUser(username: String!, email: String!, password: String!): User
+        addUser(username: String!, email: String!, password: String!): Auth
         removeUser(userId: ID!): User
         addAnimal(name: String!, age: Int!, sex: String!, species: String!, breed: String, familyFriendly: Boolean): Animal
-        removeAnimal(animalId: ID!): Animal
+        removeAnimal(id: ID!): Animal
         addApplication(applicant: ID!, adoptee: ID!): Application
+        login(email: String!, password: String!): Auth
     }
 `;
 
