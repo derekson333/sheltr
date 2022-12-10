@@ -31,7 +31,7 @@ export default function Container() {
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div>
+    <>
       <header>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <Header currentPage={currentPage} pageChange={handlePageChange} />
@@ -39,6 +39,6 @@ export default function Container() {
       </header>
       {renderContent()}
       {renderFooter()}
-    </div>
+      </>
   );
 }
