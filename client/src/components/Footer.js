@@ -22,13 +22,13 @@ function Footer() {
             <ul className="list-unstyled">
               <li>
                 <a
-                  href="https://github.com/Rjewell859/"
+                  href="https://github.com/derekson333/UNH-group5-project3/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <img
                     className="footer-icon"
-                    
+                    src={require("../img/github.png")}
                     alt="github icon"
                   ></img>
                 </a>
@@ -39,14 +39,14 @@ function Footer() {
             <ul className="list-unstyled">
               <li>
                 <a
-                  href="https://stackoverflow.com/users/19155658/ryan-jewell/"
+                  href="https://nhspca.org/adoptable-animals/?gclid=CjwKCAiA-dCcBhBQEiwAeWidtfZ4rYcSFtCt4QluuhXX4oZZDgLMSluQxVEtrTtXcjrcBHaXKL2cBBoCFssQAvD_BwE"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <img
                     className="footer-icon"
-                    
-                    alt="github icon"
+                    src={require("../img/dog-seating.png")}
+                    alt="nhpca logo"
                   ></img>
                 </a>
               </li>
@@ -57,14 +57,14 @@ function Footer() {
             <ul className="list-unstyled">
               <li>
                 <a
-                  href="https://www.linkedin.com/in/ryan-jewell-29336023b"
+                  href="https://www.pawsitivityservicedogs.com/ukraine?gclid=CjwKCAiA-dCcBhBQEiwAeWidte_xDboQ5kwrKa6wsdWUMF57X7cqWJvNRzgt-9cZJR7Bkme5c-MzeBoCgTsQAvD_BwE"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <img
                     className="footer-icon"
-                    
-                    alt="github icon"
+                    src={require("../img/animal-care.png")}
+                    alt="animal care logo"
                   ></img>
                 </a>
               </li>
@@ -74,9 +74,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="float-right footer-copyright text-center py-3 italic">
-        © 2022 Copyright
-      </div>
+      <div className="italic footer-copyright">© 2022 Copyright</div>
     </footer>
   );
 }
