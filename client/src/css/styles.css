@@ -1,15 +1,44 @@
 #heading {
-    font-size: 190%;
-    color: royalblue;
-    margin-left: 5%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-}
-#search {
-    margin-left: 5%;
-    width: 50%;
-}
-.margin-left {
-    margin-left: 20%;
-    float: right;
+  font-size: 190%;
+  color: royalblue;
+  margin-left: 5%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+nav {
+  position: relative;
+  margin-top: -10px;
+  width: 100%;
+  min-height: 200px;
+}
+#search {
+  margin-left: 5%;
+  width: 50%;
+}
+.margin-left {
+  margin-left: 20%;
+  float: right;
+}
+
+footer {
+  clear: both;
+  margin-bottom: 0;
+  position: sticky;
+}
+
+.footer-copyright {
+  color: gray;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-bottom: 0;
+  float: right;
+}
+.footer-icon {
+  width: 60px;
+  height: 60px;
+  mix-blend-mode: multiply;
+}
+
+.italic {
+  margin-right: 5%;
+  font-style: italic;
+}
