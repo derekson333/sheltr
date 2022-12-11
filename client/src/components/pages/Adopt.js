@@ -1,5 +1,5 @@
 import React from "react";
-import Animalcard from "../Animalcard";
+import Animalcards from "../Animalcards";
 
 export default function Adopt() {
   return (
@@ -15,31 +15,7 @@ export default function Adopt() {
           improved. Studied however out wishing but inhabit fortune windows.
         </p>
         <div className="container">
-          <div className="row">
-            <div className="col-sm"><Animalcard/></div>
-            <div className="col-sm"><Animalcard/></div>
-            <div className="col-sm"><Animalcard/></div>
-          </div>
-          <div className="row">
-            <div className="col-sm"><Animalcard/></div>
-            <div className="col-sm"><Animalcard/></div>
-            <div className="col-sm"><Animalcard/></div>
-          </div>
-          <div className="row">
-            <div className="col-sm"><Animalcard/></div>
-            <div className="col-sm"><Animalcard/></div>
-            <div className="col-sm"><Animalcard/></div>
-          </div>
-          <div className="row">
-            <div className="col-sm"><Animalcard/></div>
-            <div className="col-sm"><Animalcard/></div>
-            <div className="col-sm"><Animalcard/></div>
-          </div>
-          <div className="row">
-            <div className="col-sm"><Animalcard/></div>
-            <div className="col-sm"><Animalcard/></div>
-            <div className="col-sm"><Animalcard/></div>
-          </div>
+          <Animalcards/>
         </div>
         <div classNameName="card-footer"></div>
       </div>
