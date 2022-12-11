@@ -10,18 +10,16 @@ import "../css/styles.css";
 function Header({ currentPage, pageChange }) {
   return (
     <>
-      <Navbar id='header' bg="light" expand="lg">
+      <Navbar collapseOnSelect expand='lg' variant="dark" id="header" bg="dark">
         <Container fluid>
           <Navbar.Brand id="heading" href="#">
             Adoptimals
           </Navbar.Brand>
-          <span class="navbar-text">Adopt a pet today!</span>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
+          <span class="navbar-text text-info italic">Adopt a pet today!</span>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
             <Nav
               className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
             >
               <Nav.Link
                 href="#about"

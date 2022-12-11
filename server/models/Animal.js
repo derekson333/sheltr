@@ -26,6 +26,10 @@ const animalSchema = new Schema({
         required: true,
         default: true
     },
+    imgurl: {
+        type: String,
+        required: false
+    },
     applications: [
         {
             type: Schema.Types.ObjectId,
