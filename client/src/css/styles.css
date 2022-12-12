@@ -1,3 +1,7 @@
+html {
+  overflow-x: hidden;
+}
+
 #heading {
   font-size: 190%;
   color: royalblue;
@@ -9,7 +13,7 @@
   margin-left: 3%;
 }
 #content {
-  min-height: calc(70vh); 
+  min-height: calc(64vh); 
 }
 
 #login-card {

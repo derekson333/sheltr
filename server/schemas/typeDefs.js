@@ -57,7 +57,7 @@ const typeDefs = gql`
         addAnimal(name: String!, age: Int!, sex: String!, species: String!, breed: String, familyFriendly: Boolean): Animal
         removeAnimal(id: ID!): Animal
         addApplication(applicant: ID!, adoptee: ID!): Application
-        login(email: String!, password: String!): Auth
+        login(email: String! username: String!, password: String!): Auth
     }
 `;
 

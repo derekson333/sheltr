@@ -2,7 +2,7 @@ import React from "react";
 
 import Animalcards from "../Animalcards";
 
-import { QUERY_ANIMALS } from '../utils/queries';
+import { QUERY_ANIMALS } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 
 export default function Adopt() {
