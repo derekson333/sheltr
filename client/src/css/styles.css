@@ -5,6 +5,47 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+#icons {
+  margin-left: 3%;
+}
+#content {
+  min-height: calc(70vh); 
+}
+
+#login-card {
+  margin: auto;
+  margin-top: 20px;
+  height: 400px;
+  width: 50%;
+  clear: both;
+}
+
+#login-card label {
+  margin-top: 5px;
+}
+#login-card input {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+#login-card button {
+  float: right;
+  margin: 15px;
+}
+.nav-item .dropdown-menu {
+  background: #646363;
+}
+
+.nav-item .dropdown-item {
+  color: #ffffff;
+}
+
+.nav-item .dropdown-item:hover {
+  background: #41d3ff67;
+}
+
 nav {
   position: relative;
   margin-top: -10px;
@@ -15,6 +56,7 @@ nav {
   margin-left: 5%;
   width: 50%;
 }
+
 .margin-left {
   margin-left: 20%;
   float: right;
@@ -23,6 +65,7 @@ nav {
 footer {
   clear: both;
   margin-bottom: 0;
+ 
   position: sticky;
 }
 

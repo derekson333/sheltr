@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Adopt from "./pages/Adopt";
 import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
+import Login from "./pages/Login";
 import Footer from "./Footer";
 
 export default function Container() {
@@ -21,6 +22,9 @@ export default function Container() {
     if (currentPage === "Donate") {
       return <Donate />;
     }
+    if (currentPage === "Login") {
+      return <Login />;
+    }
     return <About />;
   };
 
@@ -37,7 +41,10 @@ export default function Container() {
           <Header currentPage={currentPage} pageChange={handlePageChange} />
         </nav>
       </header>
+      
+      <div id='content'>
       {renderContent()}
+      </div>
       {renderFooter()}
       </>
   );
