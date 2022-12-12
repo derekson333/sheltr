@@ -1,7 +1,17 @@
 import React from "react";
+
 import Animalcards from "../Animalcards";
 
+import { QUERY_ANIMALS } from '../utils/queries';
+import { useQuery } from '@apollo/client';
+
 export default function Adopt() {
+
+  const { loading, data } = useQuery(QUERY_ANIMALS);
+
+  // Use optional chaining to check if data exists and if it has an animals property. If not, return an empty array to use.
+  const animals = data?.animals || [];
+
   return (
     <div>
       <div classNameName="card bg-light mb-3">
@@ -15,7 +25,14 @@ export default function Adopt() {
           improved. Studied however out wishing but inhabit fortune windows.
         </p>
         <div className="container">
-          <Animalcards/>
+          {/* If the data is still loading, render a loading message */}
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+          <Animalcards
+          animals={animals}
+          />
+          )}
         </div>
         <div classNameName="card-footer"></div>
       </div>
