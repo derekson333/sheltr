@@ -14,9 +14,9 @@ export default function Adopt() {
 
   return (
     <div>
-      <div classNameName="card bg-light mb-3">
-        <h1 classNameName="card-header">Adopt Us</h1>
-        <p classNameName="card-body">
+      <div className="card bg-light mb-3">
+        <h1 className="card-header">Adopt Us</h1>
+        <p className="card-body">
           Unpleasant astonished an diminution up partiality. Noisy an their of
           meant. Death means up civil do an offer wound of. Called square an in
           afraid direct. Resolution diminution conviction so mr at unpleasing
@@ -24,7 +24,9 @@ export default function Adopt() {
           principle. Him son disposed produced humoured overcame she bachelor
           improved. Studied however out wishing but inhabit fortune windows.
         </p>
-        <div className="container">
+        
+      </div>
+      <div className="container animals">
           {/* If the data is still loading, render a loading message */}
           {loading ? (
             <div>Loading...</div>
@@ -34,8 +36,7 @@ export default function Adopt() {
           />
           )}
         </div>
-        <div classNameName="card-footer"></div>
-      </div>
+        <div className="card-footer"></div>
     </div>
   );
 }
