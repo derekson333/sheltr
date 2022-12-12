@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
 import Login from "./pages/Login";
 import Footer from "./Footer";
+import Signup from "./pages/Signup";
 
 export default function Container() {
   const [currentPage, setCurrentPage] = useState("Home");
@@ -25,6 +26,9 @@ export default function Container() {
     if (currentPage === "Login") {
       return <Login />;
     }
+    if (currentPage === "Signup") {
+      return <Signup />;
+    }
     return <About />;
   };
 
@@ -41,11 +45,9 @@ export default function Container() {
           <Header currentPage={currentPage} pageChange={handlePageChange} />
         </nav>
       </header>
-      
-      <div id='content'>
-      {renderContent()}
-      </div>
+
+      <div id="content">{renderContent()}</div>
       {renderFooter()}
-      </>
+    </>
   );
 }
