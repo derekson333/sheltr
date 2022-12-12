@@ -14,7 +14,7 @@ function Footer() {
       style={{ footerStyle }}
       className="page-footer font-small blue pt-4"
     >
-      <div className="container-fluid text-center text-md-left">
+      <div id="icons" className="container-fluid text-center text-md-left">
         <div className="row">
           <div className="col-md-4 mt-md-0 mt-3"></div>
           <hr className="clearfix w-100 d-md-none pb-3"></hr>

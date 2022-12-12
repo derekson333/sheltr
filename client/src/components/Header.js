@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import "../css/styles.css";
+
 
 function Header({ currentPage, pageChange }) {
   return (
@@ -15,7 +15,7 @@ function Header({ currentPage, pageChange }) {
           <Navbar.Brand id="heading" href="#">
             Adoptimals
           </Navbar.Brand>
-          <span class="navbar-text text-info italic">Adopt a pet today!</span>
+          <span className="navbar-text text-info italic">Adopt a pet today!</span>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav
@@ -58,9 +58,10 @@ function Header({ currentPage, pageChange }) {
                 Donate
               </Nav.Link>
               <NavDropdown
-                variant="outline-success"
+                variant="outline-success dark"
+                className=" dropdown-menu-dark"
                 title="Account"
-                id="navbarScrollingDropdown"
+                id="navbarDropdown"
               >
                 <NavDropdown.Item
                   onClick={() => pageChange("Login")}
