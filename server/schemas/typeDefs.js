@@ -18,6 +18,7 @@ const typeDefs = gql`
         animalType: String!
         breed: String
         familyFriendly: Boolean
+        imgUrl: String
         applications: [Application]
         adoption: User
     }
