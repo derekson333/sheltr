@@ -91,12 +91,18 @@ footer {
 }
 .animals {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 25px;
   grid-row-gap: 10px;
 }
+
+.animal-card {
+  clear:both;
+  margin:auto;
+  width: 150%;
+}
 .animalcardimg {
-  width:  100px;
+  width:  300px;
   height: 300px;
   object-fit: cover;
 }
