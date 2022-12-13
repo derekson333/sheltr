@@ -6,7 +6,6 @@ import Auth from "../../utils/auth";
 
 const Login = () => {
   const [userFormData, setUserFormData] = useState({
-    email: "",
     username: "",
     password: "",
   });
@@ -35,7 +34,7 @@ const Login = () => {
     }
 
     setUserFormData({
-      email: "",
+ 
       username: "",
       password: "",
     });
@@ -63,20 +62,7 @@ const Login = () => {
           >
             Something went wrong with your login credentials!
           </Alert>
-          <Form.Group>
-            <Form.Label htmlFor="email">Email:</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="email@example.com"
-              name="email"
-              onChange={handleInputChange}
-              value={userFormData.email}
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Email is required!
-            </Form.Control.Feedback>
-          </Form.Group>
+        
 
           <Form.Group>
             <Form.Label htmlFor="username">Username:</Form.Label>
@@ -110,7 +96,7 @@ const Login = () => {
           <Button
             disabled={
               !(
-                userFormData.email &&
+     
                 userFormData.username &&
                 userFormData.password
               )
