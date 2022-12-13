@@ -32,7 +32,6 @@ const typeDefs = gql`
         state: String!
         zip: Int!
         phone: Int!
-        rent: Boolean!
         children: Int!
         numberOtherPets: Int!
         typeOtherPets: String 
