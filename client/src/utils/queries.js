@@ -27,6 +27,7 @@ export const QUERY_ANIMALS = gql`
       animalType
       age
       _id
+      imgUrl
     }
   }
 `;
