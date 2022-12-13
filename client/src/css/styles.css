@@ -95,3 +95,8 @@ footer {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 }
+.animalcardimg {
+  width:  100px;
+  height: 300px;
+  object-fit: cover;
+}
