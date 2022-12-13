@@ -5,7 +5,8 @@
         "sex": "male",
         "animalType": "dog",
         "breed": "Labrador Retriever",
-        "familyFriendly": true
+        "familyFriendly": true,
+        "imgUrl": "https://cdn.filestackcontent.com/BpZPRvZOQg6NlzzVMDF0"
     },
     {
         "name": "Bella",
@@ -13,7 +14,8 @@
         "sex": "female",
         "animalType": "dog",
         "breed": "German Shepherd",
-        "familyFriendly": true
+        "familyFriendly": true,
+        "imgUrl": "https://cdn.filestackcontent.com/2yc62HoHR3Ke0qWQODi9"
     },
     {
         "name": "Buddy",
@@ -21,7 +23,8 @@
         "sex": "male",
         "animalType": "dog",
         "breed": "Beagle",
-        "familyFriendly": true
+        "familyFriendly": true,
+        "imgUrl": "https://cdn.filestackcontent.com/rZy99xbfQ2iGIjZxMruW"
     },
     {
         "name": "Lucy",
@@ -29,7 +32,8 @@
         "sex": "female",
         "animalType": "dog",
         "breed": "French Bulldog",
-        "familyFriendly": true
+        "familyFriendly": true,
+        "imgUrl": "https://cdn.filestackcontent.com/njpOjcbLRYKg9N2ZltzX"
     },
     {
         "name": "Oliver",
@@ -37,7 +41,8 @@
         "sex": "male",
         "animalType": "cat",
         "breed": "American Shorthair",
-        "familyFriendly": true
+        "familyFriendly": true,
+        "imgUrl": "https://cdn.filestackcontent.com/1E7t2EfrTWGe9AkJFZOw"
     },
     {
         "name": "Nala",
@@ -45,15 +50,17 @@
         "sex": "female",
         "animalType": "cat",
         "breed": "Abyssinian",
-        "familyFriendly": true
+        "familyFriendly": true,
+        "imgUrl": "https://cdn.filestackcontent.com/0zzOYiUoTXui1izoGNwy"
     },
     {
         "name": "Simba",
         "age": 3,
         "sex": "male",
         "animalType": "cat",
-        "breed": "Maine Coon",
-        "familyFriendly": true
+        "breed": "American Shorthair",
+        "familyFriendly": true,
+        "imgUrl": "https://cdn.filestackcontent.com/PtKVbMAQRQ259LykARjA"
     },
     {
         "name": "Callie",
@@ -61,7 +68,8 @@
         "sex": "female",
         "animalType": "cat",
         "breed": "Scottish Fold",
-        "familyFriendly": true
+        "familyFriendly": true,
+        "imgUrl": "https://cdn.filestackcontent.com/kWV83JVSQuyVtIksotRE"
     },
     {
         "name": "Zazu",
@@ -69,7 +77,8 @@
         "sex": "male",
         "animalType": "bird",
         "breed": "African Red-Billed Hornbill",
-        "familyFriendly": true
+        "familyFriendly": true,
+        "imgUrl": "https://cdn.filestackcontent.com/djEML8FeSESEXdQ3en13"
     },
     {
         "name": "Cybird",
@@ -77,6 +86,7 @@
         "sex": "female",
         "animalType": "bird",
         "breed": "Parrot",
-        "familyFriendly": true
+        "familyFriendly": true,
+        "imgUrl": "https://cdn.filestackcontent.com/uKUWkitTRWidD4HIbfpq"
     }
 ]
