@@ -25,7 +25,7 @@ const Login = () => {
 
     try {
       const { data } = await login({
-        variable: { ...userFormData },
+        variables: { ...userFormData },
       });
 
       Auth.login(data.login.token);
@@ -34,20 +34,20 @@ const Login = () => {
     }
 
     setUserFormData({
- 
       username: "",
       password: "",
     });
   };
 
   return (
+    <>
     <div id="login-card" className="card bg-light mb-3">
-      <h4 className="card-header">Login</h4>
+      
       {data ? (
-        <p className="bg-success card text-light">
-          Success! You are now logged in.{" "}
-        </p>
-      ) : (
+        <h4 className="bg-success card-header text-light">
+          Login Successful.{" "}
+        </h4>
+      ) : ( <h4 className="card-header">Login</h4> )}
         <Form
           className="card-body"
           noValidate
@@ -62,8 +62,6 @@ const Login = () => {
           >
             Something went wrong with your login credentials!
           </Alert>
-        
-
           <Form.Group>
             <Form.Label htmlFor="username">Username:</Form.Label>
             <Form.Control
@@ -78,7 +76,6 @@ const Login = () => {
               Username is required!
             </Form.Control.Feedback>
           </Form.Group>
-
           <Form.Group>
             <Form.Label htmlFor="password">Password:</Form.Label>
             <Form.Control
@@ -96,7 +93,6 @@ const Login = () => {
           <Button
             disabled={
               !(
-     
                 userFormData.username &&
                 userFormData.password
               )
@@ -107,13 +103,13 @@ const Login = () => {
             Submit
           </Button>
         </Form>
-      )}
       {error && (
-        <div className="card my-3 p-3 bg-danger text-white">
+        <div style={{margin: '20px'}}className="card my-3 p-3 bg-danger text-white">
           {error.message}
         </div>
       )}
     </div>
+    </>
   );
 };
 
