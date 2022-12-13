@@ -26,7 +26,7 @@ const animalSchema = new Schema({
         required: true,
         default: true
     },
-    imgurl: {
+    imgUrl: {
         type: String,
         required: false
     },
