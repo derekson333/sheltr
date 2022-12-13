@@ -52,12 +52,12 @@ const Signup = () => {
 
   return (
     <div id="login-card" className="card bg-light mb-3">
-      <h4 className="card-header">Sign Up</h4>
+      
       {data ? (
-        <p className="bg-success card text-light">
-          Success! You are now signed up.{" "}
-        </p>
-      ) : (
+        <h4 className="bg-success card-header text-light">
+          Sign Up Successful{" "}
+        </h4>
+      ) : (<h4 className="card-header">Sign Up</h4>)}
         <Form
           className="card-body"
           noValidate
@@ -130,7 +130,7 @@ const Signup = () => {
             Submit
           </Button>
         </Form>
-      )}
+        
       {error && (
         <div className="card my-3 p-3 bg-danger text-white">
           {error.message}
