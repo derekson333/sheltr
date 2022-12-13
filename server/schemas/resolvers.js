@@ -1,93 +1,102 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Animal, Application } = require('../models');
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Animal, Application } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
-    Query: {
-        // For dev only
-        users: async () => {
-            return await User.find().populate('applications').populate('adoptions');
-        },
+  Query: {
+    // For dev only
+    users: async () => {
+      return await User.find().populate("applications").populate("adoptions");
+    },
+    user: async (parent, args) => {
+      return await User.findById(args.id)
+        .populate("applications")
+        .populate("adoptions");
+    },
+    animals: async () => {
+      return await Animal.find().populate("applications").populate("adoption");
+    },
+    animal: async (parent, args) => {
+      return await Animal.findById(args.id)
+        .populate("applications")
+        .populate("adoption");
+    },
+    application: async (parent, args) => {
+      return await Application.findById(args.animalId);
+    },
+    applications: async (parent, args) => {
+      return await Application.find({ adoptee: args.id });
+    },
+  },
 
-        user: async (parent, args) => {
-            return await User.findById(args.id).populate('applications').populate('adoptions');
-        },
+  Mutation: {
+    addUser: async (parent, { username, email, password }) => {
+      const user = await User.create({ username, email, password });
+      const token = signToken(user);
 
-        animals: async () => {
-            return await Animal.find().populate('applications').populate('adoption');
-        },
-
-        animal: async (parent, args) => {
-            return await Animal.findById(args.id).populate('applications').populate('adoption');
-        },
-
-        application: async (parent, args) => {
-            return await Application.findById(args.animalId)
-        },
-
-        applications: async (parent, args) => {
-            return await Application.find({ adoptee: args.id })
-        }
+      return { token, user };
     },
 
-    Mutation: {
-        addUser: async (parent, { username, email, password }) => {
-            const user = await User.create({ username, email, password });
-            const token = signToken(user);
+    removeUser: async (parent, { userId }, context) => {
+      if (context.user) {
+        return await User.findOneAndDelete({ _id: userId });
+      }
 
-            return { token, user };
-        },
+      throw new AuthenticationError("Not logged in");
+    },
 
-        removeUser: async (parent, { userId }, context) => {
-            if (context.user) {
-                return await User.findOneAndDelete({ _id: userId });
-            }
+    addAnimal: async (
+      parent,
+      { name, age, sex, animalType, breed, familyFriendly }
+    ) => {
+      return await Animal.create({
+        name,
+        age,
+        sex,
+        animalType,
+        breed,
+        familyFriendly,
+      });
+    },
 
-            throw new AuthenticationError('Not logged in');
-        },
+    removeAnimal: async (parent, { animalId }) => {
+      return await Animal.findOneAndDelete({ _id: animalId });
+    },
 
-        addAnimal: async (parent, { name, age, sex, animalType, breed, familyFriendly }) => {
-            return await Animal.create({ name, age, sex, animalType, breed, familyFriendly });
-        },
+    addApplication: async (parent, { applicant, adoptee }, context) => {
+      if (context.user) {
+        return await Application.create({ applicant, adoptee });
+      }
 
-        removeAnimal: async (parent, { animalId }) => {
-            return await Animal.findOneAndDelete({ _id: animalId });
-        },
+      throw new AuthenticationError("Not logged in");
+    },
 
-        addApplication: async (parent, { applicant, adoptee }, context) => {
-            if (context.user) {
-                return await Application.create({ applicant, adoptee });
-            }
+    login: async (parent, { username, password }) => {
+      const user = await User.findOne({ username });
 
-            throw new AuthenticationError('Not logged in');
-        },
+      if (!user) {
+        throw new AuthenticationError("Incorrect credentials");
+      }
 
-        login: async (parent, { email, username, password }) => {
-            const user = await User.findOne({ email });
+      const correctName = true;
+      if (user.username !== username) {
+        correctName = false;
+      }
 
-            if (!user) {
-                throw new AuthenticationError('Incorrect credentials');
-            }
+      const correctPw = await user.isCorrectPassword(password);
 
-            const correctName = true;
-            if (user.username != username) {
-                correctName = false
-            }
+      if (!correctPw) {
+        throw new AuthenticationError("Incorrect password");
+      }
+      if (!correctName) {
+        throw new AuthenticationError("Incorrect username");
+      }
 
-            const correctPw = await user.isCorrectPassword(password);
+      const token = signToken(user);
 
-            if (!correctPw) {
-                throw new AuthenticationError('Incorrect password');
-            }
-            if (!correctName) {
-                throw new AuthenticationError('Incorrect username');
-            }
-
-            const token = signToken(user);
-
-            return { token, user };
-        }
-    }
+      return { token, user };
+    },
+  },
 };
 
 module.exports = resolvers;
