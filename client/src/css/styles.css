@@ -3,9 +3,11 @@ html {
 }
 
 #heading {
-  font-size: 190%;
-  color: royalblue;
+  font-size: 280%;
+  background: linear-gradient(#db2727, #a1a9fc);
   margin-left: 5%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -85,6 +87,11 @@ footer {
   mix-blend-mode: multiply;
 }
 
+#phrase {
+  background: linear-gradient(#2e3fff, #93ffff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
 .italic {
   margin-right: 5%;
   font-style: italic;

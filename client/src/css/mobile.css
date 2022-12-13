@@ -13,9 +13,10 @@
   
   @media only screen and (max-width: 600px) {
     .animals {
+      clear:both;
       grid-template-columns: repeat(1, 1fr);
     }
     .animal-card {
-      margin: 1px;
+      margin: 0;
     }
   }
