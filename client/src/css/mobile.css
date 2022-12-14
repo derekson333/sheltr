@@ -1,24 +1,22 @@
-@media only screen and (max-width: 1500px) {
-    .animals {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
   
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1250px) {
     .animals {
       grid-template-columns: repeat(3, 1fr);
     }
   }
   
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 950px) {
     .animals {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 600px) {
     .animals {
+      clear:both;
       grid-template-columns: repeat(1, 1fr);
+    }
+    .animal-card {
+      margin: 0;
     }
   }
