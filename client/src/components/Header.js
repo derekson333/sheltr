@@ -5,22 +5,21 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
-
+import Auth from "../utils/auth";
 function Header({ currentPage, pageChange }) {
   return (
     <>
-      <Navbar collapseOnSelect expand='lg' variant="dark" id="header" bg="dark">
+      <Navbar collapseOnSelect expand="lg" variant="dark" id="header" bg="dark">
         <Container fluid>
           <Navbar.Brand id="heading" href="#">
-            Adoptimals
+            Sheltr
           </Navbar.Brand>
-          <span className="navbar-text text-info italic">Adopt a pet today!</span>
+          <span id="phrase" className="navbar-text text-info italic">
+            Adopt a pet today!
+          </span>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-            >
+            <Nav className="me-auto my-2 my-lg-0">
               <Nav.Link
                 href="#about"
                 onClick={() => pageChange("About")}
@@ -63,31 +62,39 @@ function Header({ currentPage, pageChange }) {
                 title="Account"
                 id="navbarDropdown"
               >
-                <NavDropdown.Item
-                  onClick={() => pageChange("Login")}
-                  href="#login"
-                >
-                  Login
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  onClick={() => pageChange("Logout")}
-                  href="#logout"
-                >
-                  Logout
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  onClick={() => pageChange("Profile")}
-                  href="#profile"
-                >
-                  Profile
-                </NavDropdown.Item>
+                {Auth.loggedIn() ? (
+                  <NavDropdown.Item>
+                    Hello {sessionStorage.getItem("user")}
+                  </NavDropdown.Item>
+                ) : (
+                  <NavDropdown.Item
+                    onClick={() => pageChange("Login")}
+                    href="#login"
+                  >
+                    Login
+                  </NavDropdown.Item>
+                )}
                 <NavDropdown.Divider />
-                <NavDropdown.Item
-                  onClick={() => pageChange("Signup")}
-                  href="#signup"
-                >
-                  Signup
-                </NavDropdown.Item>
+                {Auth.loggedIn() ? (
+                  <>
+                    <NavDropdown.Item
+                      onClick={() => pageChange("Profile")}
+                      href="#profile"
+                    >
+                      Profile
+                    </NavDropdown.Item>
+                    <NavDropdown.Item onClick={() => Auth.logout()}>
+                      Logout
+                    </NavDropdown.Item>
+                  </>
+                ) : (
+                  <NavDropdown.Item
+                    onClick={() => pageChange("Signup")}
+                    href="#signup"
+                  >
+                    Signup
+                  </NavDropdown.Item>
+                )}
               </NavDropdown>
             </Nav>
             <Form className="d-flex">
