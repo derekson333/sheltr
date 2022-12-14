@@ -6,21 +6,20 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-
 function Header({ currentPage, pageChange }) {
   return (
     <>
-      <Navbar collapseOnSelect expand='lg' variant="dark" id="header" bg="dark">
+      <Navbar collapseOnSelect expand="lg" variant="dark" id="header" bg="dark">
         <Container fluid>
           <Navbar.Brand id="heading" href="#">
             Adoptimals
           </Navbar.Brand>
-          <span className="navbar-text text-info italic">Adopt a pet today!</span>
+          <span id="phrase" className="navbar-text text-info italic">
+            Adopt a pet today!
+          </span>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-            >
+            <Nav className="me-auto my-2 my-lg-0">
               <Nav.Link
                 href="#about"
                 onClick={() => pageChange("About")}
