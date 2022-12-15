@@ -1,7 +1,7 @@
 {
-  "name": "server",
+  "name": "sheltr-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "The hookup app to connect you with a pet",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
