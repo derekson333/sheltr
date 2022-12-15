@@ -40,7 +40,7 @@ const Donate = () => {
   return (
     <div className="sr-root">
       <div className="sr-main">
-        <section className="container">
+        <section className="donate-container">
           <div>
             <h1>One-Time Donation</h1>
             <h4>Every dollar goes to caring for impossibly cute animals in need!</h4>
