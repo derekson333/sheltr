@@ -12,28 +12,28 @@ export default function Container() {
   const [currentPage, setCurrentPage] = useState("Home");
   const renderContent = () => {
     if (currentPage === "About") {
-      return <About />;
+      return <About />
     }
     if (currentPage === "Adopt") {
-      return <Adopt />;
+      return <Adopt />
     }
     if (currentPage === "Contact") {
-      return <Contact />;
+      return <Contact />
     }
     if (currentPage === "Donate") {
-      return <Donate />;
+      return <Donate />
     }
     if (currentPage === "Login") {
-      return <Login />;
+      return <Login />
     }
     if (currentPage === "Signup") {
-      return <Signup />;
+      return <Signup />
     }
-    return <About />;
+    return <About />
   };
 
   const renderFooter = () => {
-    return <Footer />;
+    return <Footer />
   };
 
   const handlePageChange = (page) => setCurrentPage(page);
