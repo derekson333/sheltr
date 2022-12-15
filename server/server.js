@@ -2,9 +2,8 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
-
-// Copy the .env.example in the root into a .env file in this folder
 require('dotenv').config();
+
 
 // Ensure environment variables are set.
 // checkEnv();
