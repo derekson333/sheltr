@@ -45,6 +45,17 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
+    makeDonation: async (parent, {userId, donationAmount}) => {
+        if (context.user) {
+            return await User.findOneAndUpdate(
+                { _id: userId },
+                { $inc: { donations: donationAmount }},
+                { runValidators: true, new: true}
+            )
+        }
+        throw new AuthenticationError("Not logged in")
+    },
+
     addAnimal: async (
       parent,
       { name, age, sex, animalType, breed, familyFriendly }

@@ -6,6 +6,7 @@ const typeDefs = gql`
         username: String!
         email: String!
         password: String!
+        donations: Float
         applications: [Application]
         adoptions: [Animal]
     }
@@ -54,6 +55,7 @@ const typeDefs = gql`
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         removeUser(userId: ID!): User
+        makeDonation(userId: ID!, donationAmount: Float!): User
         addAnimal(name: String!, age: Int!, sex: String!, species: String!, breed: String, familyFriendly: Boolean): Animal
         removeAnimal(id: ID!): Animal
         addApplication(applicant: ID!, adoptee: ID!): Application

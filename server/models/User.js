@@ -19,6 +19,11 @@ const userSchema = new Schema({
         required: true,
         minlength: 5,
     },
+    donations: {
+        type: Number,
+        required: false,
+        default: 0
+    },
     applications: [
         {
             type: Schema.Types.ObjectId,
