@@ -88,5 +88,14 @@
         "breed": "Parrot",
         "familyFriendly": true,
         "imgUrl": "https://cdn.filestackcontent.com/uKUWkitTRWidD4HIbfpq"
+    },
+    {
+        "name": "Zina",
+        "age": 5,
+        "sex": "female",
+        "animalType": "cat",
+        "breed": "American Shorthair",
+        "familyFriendly": true,
+        "imgUrl": "https://cdn.filestackcontent.com/B6CfACggRxKwdcPCNLSd"
     }
 ]
