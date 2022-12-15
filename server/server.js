@@ -4,7 +4,7 @@ const path = require('path');
 const { authMiddleware } = require('./utils/auth');
 
 // Copy the .env.example in the root into a .env file in this folder
-// require('dotenv').config({ path: './.env' });
+require('dotenv').config({ path: './.env' });
 
 // Ensure environment variables are set.
 // checkEnv();
