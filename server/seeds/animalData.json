@@ -97,5 +97,14 @@
         "breed": "American Shorthair",
         "familyFriendly": true,
         "imgUrl": "https://cdn.filestackcontent.com/B6CfACggRxKwdcPCNLSd"
+    },
+    {
+        "name": "Felix",
+        "age": 12,
+        "sex": "male",
+        "animalType": "cat",
+        "breed": "Siberian",
+        "familyFriendly": true,
+        "imgUrl": "https://cdn.filestackcontent.com/Vqg2e5FThCRGrsPEh67W"
     }
 ]
