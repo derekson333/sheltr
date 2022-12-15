@@ -63,7 +63,7 @@ function Header({ currentPage, pageChange }) {
                 id="navbarDropdown"
               >
                 {Auth.loggedIn() ? (
-                  <NavDropdown.Item>
+                  <NavDropdown.Item className='disabled'>
                     Hello {sessionStorage.getItem("user")}
                   </NavDropdown.Item>
                 ) : (
