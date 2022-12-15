@@ -17,7 +17,7 @@ export default function Adopt() {
       <div className="card bg-light mb-3">
         <h1 className="card-header">Adopt Us</h1>
         <p className="card-body">
-          Unpleasant astonished an diminution up partiality. Noisy an their of
+          Unpleasant what astonished an diminution up partiality. Noisy an their of
           meant. Death means up civil do an offer wound of. Called square an in
           afraid direct. Resolution diminution conviction so mr at unpleasing
           simplicity no. No it as breakfast up conveying earnestly immediate
