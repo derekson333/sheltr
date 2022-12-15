@@ -22,6 +22,7 @@ const Login = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(userFormData);
+    sessionStorage.setItem('user', userFormData.username)
 
     try {
       const { data } = await login({

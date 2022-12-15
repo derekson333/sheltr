@@ -29,10 +29,6 @@ const applicationSchema = new Schema({
         type: Number,
         required: true
     },
-    rent: {
-        type: Boolean,
-        required: true
-    },
     children: {
         type: Number,
         required: true
