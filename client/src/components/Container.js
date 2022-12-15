@@ -7,6 +7,7 @@ import Donate from "./pages/Donate";
 import Login from "./pages/Login";
 import Footer from "./Footer";
 import Signup from "./pages/Signup";
+import Success from './pages/Success';
 
 export default function Container() {
   const [currentPage, setCurrentPage] = useState("Home");
@@ -28,6 +29,9 @@ export default function Container() {
     }
     if (currentPage === "Signup") {
       return <Signup />
+    }
+    if (currentPage === "Success") {
+      return <Success />
     }
     return <About />
   };
