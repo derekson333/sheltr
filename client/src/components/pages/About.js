@@ -6,15 +6,10 @@ export default function About() {
       <div className="card bg-light mb-3">
         <h1 className="card-header">About Us</h1>
         <p className="card-body">
-          Far curiosity incommode now led smallness allowance. Favour bed assure
-          son things yet. She consisted consulted elsewhere happiness disposing
-          household any old the. Widow downs you new shade drift hopes small. So
-          otherwise commanded sweetness we improving. Instantly by daughters
-          resembled unwilling principle so middleton. Fail most room even gone
-          her end like. Comparison dissimilar unpleasant six compliment two
-          unpleasing any add. Ashamed my company thought wishing colonel it
-          prevent he in. Pretended residence are something far engrossed old
-          off.
+            Welcome to sheltr, where you can connect with the newest furry addition to your home! We envision a world where
+            the human-animal bond is accessible to everyone, and no animal is left in need. Please make an account with us, 
+            take a look through the animals who are currently looking for homes, apply to adopt, or even leave a donation so
+            we can continue to care for vulnerable animals and find them loving homes.
         </p>
         <div className="card-footer">
           </div>
