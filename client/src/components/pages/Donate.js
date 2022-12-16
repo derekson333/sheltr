@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+
 const formatPrice = ({ amount, currency, quantity }) => {
   const numberFormat = new Intl.NumberFormat('en-US', {
     style: 'currency',
