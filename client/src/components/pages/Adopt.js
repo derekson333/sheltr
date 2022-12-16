@@ -26,7 +26,7 @@ export default function Adopt() {
         </p>
         
       </div>
-      <div className="container animals">
+      <div className="container">
           {/* If the data is still loading, render a loading message */}
           {loading ? (
             <div>Loading...</div>
