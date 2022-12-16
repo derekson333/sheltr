@@ -8,8 +8,8 @@
     "seed": "node seeds/seed.js",
     "watch": "nodemon server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "unh-group5-project3",
+  "license": "MIT",
   "dependencies": {
     "apollo-server-express": "^3.6.2",
     "bcrypt": "^5.1.0",
