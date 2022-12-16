@@ -1,15 +1,15 @@
 {
-  "name": "server",
+  "name": "sheltr-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "The hookup app to connect you with a pet",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "seed": "node seeds/seed.js",
     "watch": "nodemon server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "unh-group5-project3",
+  "license": "MIT",
   "dependencies": {
     "apollo-server-express": "^3.6.2",
     "bcrypt": "^5.1.0",

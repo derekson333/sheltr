@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_USER = gql`
   query user($username: String!) {
@@ -9,9 +9,24 @@ export const QUERY_USER = gql`
       applications {
         _id
       }
-      pets {
+      adoptions {
         _id
       }
+    }
+  }
+`;
+
+export const QUERY_ANIMAL = gql`
+  query getAnimal($animalId: ID!) {
+    animal(id: $animalId) {
+      name
+      sex
+      familyFriendly
+      breed
+      animalType
+      age
+      _id
+      imgUrl
     }
   }
 `;
@@ -31,4 +46,3 @@ export const QUERY_ANIMALS = gql`
     }
   }
 `;
-

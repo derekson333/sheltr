@@ -22,7 +22,7 @@ function Footer() {
             <ul className="list-unstyled">
               <li>
                 <a
-                  href="https://github.com/derekson333/UNH-group5-project3/"
+                  href="https://github.com/derekson333/sheltr/"
                   target="_blank"
                   rel="noreferrer"
                 >

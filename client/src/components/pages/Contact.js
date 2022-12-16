@@ -5,13 +5,11 @@ export default function Contact() {
     <div>
       <div className="card bg-light mb-3">
         <h1 className="card-header">Contact Us</h1>
+        {/* This text and format is janky but it's better than ipsum lorem */}
         <p className="card-body">
-          And produce say the ten moments parties. Simple innate summer fat
-          appear basket his desire joy. Outward clothes promise at gravity do
-          excited. Sufficient particular impossible by reasonable oh expression
-          is. Yet preference connection unpleasant yet melancholy but end
-          appearance. And excellence partiality estimating terminated day
-          everything.
+            <p>You can reach sheltr Monday through Friday 9AM-5PM at <a href="tel:+6031234567">(603) 123-4567</a></p>
+            <p>Feel free to leave a message at <a href="mailto:contact@sheltr.tech">contact@sheltr.tech</a></p>
+            <p>Or don't be shy to fill out an application and we will contact you to make an appointment</p>
         </p>
         <div className="card-footer"></div>
       </div>

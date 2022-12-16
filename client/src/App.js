@@ -8,12 +8,19 @@ import {
 import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
 import { setContext } from "@apollo/client/link/context";
-import Container from "./components/Container";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./css/styles.css";
-import "./css/mobile.css";
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import About from './components/pages/About';
+import Adopt from './components/pages/Adopt';
+import Animal from "./components/pages/Animal";
+import Contact from './components/pages/Contact'
+import Donate from './components/pages/Donate'
+import Login from './components/pages/Login';
+import Profile from "./components/pages/Profile";
+import Signup from "./components/pages/Signup"
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
@@ -50,8 +57,61 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Container />
-    </ApolloProvider>
+    <Router>
+      <div className="flex-column justify-flex-start min-100-vh">
+      <header>
+     <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <Header/>
+       </nav>
+      </header>
+        <div id="content">
+          <Routes>
+          <Route 
+              path="/" 
+              element={<About />} 
+            />
+            <Route 
+              path="/about" 
+              element={<About />} 
+            />
+            <Route 
+              path="/adopt" 
+              element={<Adopt />} 
+            />
+            <Route 
+              path="/animal" 
+              element={<Animal />} 
+            />
+            <Route 
+              path="/contact" 
+              element={<Contact />} 
+            />
+            <Route 
+              path="/donate" 
+              element={<Donate />} 
+            />
+            <Route 
+              path="/login" 
+              element={<Login />} 
+            />
+            <Route 
+              path="/signup" 
+              element={<Signup />} 
+            />
+            <Route 
+              path="/profile" 
+              element={<Profile />} 
+            />
+            <Route 
+              path="/animal/:id" 
+              element={<Animal />} 
+            />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </Router>
+  </ApolloProvider>
   );
 }
 

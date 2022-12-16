@@ -1,4 +1,4 @@
-# Treasure Pandas Animal Adoptions
+# sheltr
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -20,7 +20,7 @@ This is an animal adoption website created by Dan Erekson, Paul Pinard, Ryan Jew
 We were motivated to create this app to fill a need for our animal shelter by broadening our reach to potential adopters.
 
 ## Demonstration
-[Deployed Link](https://unh-group5-project3.herokuapp.com/)
+[Deployed Link](https://sheltr.tech/)
 
 ## Contributing
 Contact via information found in the "Contact" section of this README.
