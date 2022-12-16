@@ -8,15 +8,16 @@ const resolvers = {
     users: async () => {
       return await User.find().populate("applications").populate("adoptions");
     },
-    user: async (parent, args) => {
-      return await User.findById(args.id)
+    user: async (parent, { username }) => {
+      return await User.findOne({username})
         .populate("applications")
         .populate("adoptions");
     },
-    userByUsername: async (parent, args) => {
-      return await User.findOne({ username: args.username})
-        .populate("applications")
-        .populate("adoptions")
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id }).populate("applications").populate("adoptions");
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
     animals: async () => {
       return await Animal.find().populate("applications").populate("adoption");
