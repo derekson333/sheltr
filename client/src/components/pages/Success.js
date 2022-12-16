@@ -8,11 +8,15 @@ const Success = () => {
 
   useEffect(() => {
     async function fetchSession() {
-      setSession(
+      
         await fetch('/checkout-session?sessionId=' + sessionId).then((res) =>
           res.json()
         )
-      );
+        .then((data) => {
+          console.log(data);
+          setSession(data);
+        })
+      
     }
     fetchSession();
   }, [sessionId]);
@@ -29,6 +33,7 @@ const Success = () => {
         </div>
         <div className="sr-section completed-view">
           <div className="sr-callout">
+            {session?.amount_total}
             <pre>{JSON.stringify(session, null, 2)}</pre>
           </div>
           <Link to="/">Restart demo</Link>
