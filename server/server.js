@@ -2,12 +2,11 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
+require('dotenv').config();
 
-// Copy the .env.example in the root into a .env file in this folder
-require('dotenv').config({ path: './.env' });
 
 // Ensure environment variables are set.
-checkEnv();
+// checkEnv();
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
@@ -135,14 +134,14 @@ app.post('/webhook', async (req, res) => {
 });
 
 
-function checkEnv() {
-  const price = process.env.PRICE;
-  if(price === "price_12345" || !price) {
-    console.log("You must set a Price ID in the environment variables. Please see the README.");
-    console.log(process.env.price);
-    process.exit(0);
-  }
-}
+// function checkEnv() {
+//   const price = process.env.PRICE;
+//   if(price === "price_12345" || !price) {
+//     console.log("You must set a Price ID in the environment variables. Please see the README.");
+//     console.log(process.env.price);
+//     process.exit(0);
+//   }
+// }
 
 
 // Create a new instance of an Apollo server with the GraphQL schema
