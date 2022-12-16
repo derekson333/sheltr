@@ -1,23 +1,11 @@
 import React from "react";
-import { useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
-import { QUERY_ANIMAL } from '../../utils/queries';
 
-
-
-export default function Animal() {
-  const { id } = useParams();
-  console.log(id)
-  const { loading, data } = useQuery(QUERY_ANIMAL, {variables: { animalId: id }});
-  const animal = data?.animal || {};
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+const Animalcard = ({ animal }) => {
   return (
-
-        <div
+    <>
+      <div
         key={animal._id}
-         className="card animal"
+        className="container animal-card"
         style={{ maxWidth: "70%", maxHeight: "", marginTop: "20px" }}
       >
         <div className="animal-card card text-center">
@@ -40,15 +28,17 @@ export default function Animal() {
             <p className="card-text" style={{ marginBottom: "15px" }}>
               Breed: {animal.breed}
             </p>
-            </div>
             <button
               className="btn btn-primary"
               type="button"
             >
               Apply for adoption.
             </button>
-            </div>
-   </div>
-        
+          </div>
+        </div>
+      </div>
+    </>
   );
-}
+};
+
+export default Animalcard;
