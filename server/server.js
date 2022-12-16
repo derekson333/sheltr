@@ -19,7 +19,12 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
-
+// // Fetch the Checkout Session to display the JSON result on the success page
+app.get('/checkout-session', async (req, res) => {
+  const { sessionId } = req.query;
+  const session = await stripe.checkout.sessions.retrieve(sessionId);
+  res.send(session);
+});
 
 
 
@@ -60,12 +65,9 @@ app.get('/donate', async (req, res) => {
   });
 });
 
-// // Fetch the Checkout Session to display the JSON result on the success page
-app.get('/checkout-session', async (req, res) => {
-  const { sessionId } = req.query;
-  const session = await stripe.checkout.sessions.retrieve(sessionId);
-  res.send(session);
-});
+
+
+
 
 app.post('/create-checkout-session', async (req, res) => {
   const domainURL = process.env.DOMAIN;
@@ -88,7 +90,7 @@ app.post('/create-checkout-session', async (req, res) => {
       },
     ],
     // ?session_id={CHECKOUT_SESSION_ID} means the redirect will have the session ID set as a query param
-    success_url: `${domainURL}/success.html?session_id={CHECKOUT_SESSION_ID}`,
+    success_url: `${domainURL}/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${domainURL}/canceled.html`,
     // automatic_tax: {enabled: true},
   });
