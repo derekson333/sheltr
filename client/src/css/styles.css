@@ -624,3 +624,12 @@ footer {
   width: 30px;
   height: 500px;
 }
+.animalcardsearch {
+  max-width: 50%;
+}
+@media only screen and (max-width: 700px) {
+  .animalcardsearch {
+    max-width: 100%;
+  }
+
+}
