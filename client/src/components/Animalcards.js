@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup"
 import { Link } from "react-router-dom";
 
 const Animalcards = ({ animals }) => {
@@ -23,10 +24,12 @@ const Animalcards = ({ animals }) => {
   };
   return (
     <div>
+      <div className="container animalcardsearch">
       <Form className="d-flex">
+      <InputGroup className="d-flex">
         <Form.Control
           type="search"
-          placeholder="Search a pet"
+          placeholder="Find a new friend!"
           className="me-2"
           aria-label="Search"
           onChange={(e) => setInputText(e.target.value)}
@@ -34,7 +37,11 @@ const Animalcards = ({ animals }) => {
         <Button onClick={inputHandler} variant="outline-success">
           Search
         </Button>
+      </InputGroup>
       </Form>
+      </div>
+      
+      
       {currentAnimals == false && (
         <h1 style={{ marginTop: "30px", textAlign: "center" }}>
           {" "}
