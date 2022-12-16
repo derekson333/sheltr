@@ -13,6 +13,11 @@ const resolvers = {
         .populate("applications")
         .populate("adoptions");
     },
+    userByUsername: async (parent, args) => {
+      return await User.findOne({ username: args.username})
+        .populate("applications")
+        .populate("adoptions")
+    },
     animals: async () => {
       return await Animal.find().populate("applications").populate("adoption");
     },
