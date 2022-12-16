@@ -8,13 +8,14 @@ const Animalcards = ({ animals }) => {
   const [currentAnimals, setAnimals] = useState(animals);
 
   let inputHandler = () => {
+    
     console.log(inputText);
     const newFilter = animals.filter((animal) => {
       return (
         animal.name.toLowerCase().includes(inputText.toLowerCase()) ||
-        animal.sex.includes(inputText.toLowerCase()) ||
-        animal.animalType.includes(inputText.toLowerCase()) ||
-        animal.breed.includes(inputText.toLowerCase()) ||
+        animal.sex.toLowerCase().includes(inputText.toLowerCase()) ||
+        animal.animalType.toLowerCase().includes(inputText.toLowerCase()) ||
+        animal.breed.toLowerCase().includes(inputText.toLowerCase()) ||
         animal.age.toString().includes(inputText.toLowerCase())
       );
     });
