@@ -2,13 +2,13 @@ import React from "react";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { Link } from "react-router-dom";
 
 const Animalcards = ({ animals }) => {
   const [inputText, setInputText] = useState("");
   const [currentAnimals, setAnimals] = useState(animals);
 
   let inputHandler = () => {
-    
     console.log(inputText);
     const newFilter = animals.filter((animal) => {
       return (
@@ -35,9 +35,12 @@ const Animalcards = ({ animals }) => {
           Search
         </Button>
       </Form>
-      {currentAnimals == false &&
-      <h1 style={{marginTop:"30px",textAlign:"center"}}> No results found</h1>
-      }
+      {currentAnimals == false && (
+        <h1 style={{ marginTop: "30px", textAlign: "center" }}>
+          {" "}
+          No results found
+        </h1>
+      )}
       <div className="animals">
         {currentAnimals.map((animal) => (
           <div
@@ -65,13 +68,9 @@ const Animalcards = ({ animals }) => {
                 <p className="card-text" style={{ marginBottom: "15px" }}>
                   Breed: {animal.breed}
                 </p>
-                <button
-                  data-id={animal.id}
-                  className="btn btn-primary"
-                  type="button"
-                >
-                  Adopt Me!
-                </button>
+                <Link className="btn btn-primary" to={`/animal/${animal._id}`}>
+                  Adopt Me
+                </Link>
               </div>
             </div>
           </div>

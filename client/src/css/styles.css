@@ -611,3 +611,16 @@ footer {
   height: 300px;
   object-fit: cover;
 }
+
+.animal {
+  justify-content: center;
+  width: 400px;
+  margin-left: 10%;
+  margin-right: 30px;
+ 
+}
+
+.animal img {
+  width: 30px;
+  height: 500px;
+}
