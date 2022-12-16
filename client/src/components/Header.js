@@ -6,6 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Auth from "../utils/auth";
+import { Link } from "react-router-dom";
 function Header({ currentPage, pageChange }) {
   return (
     <>
@@ -20,42 +21,18 @@ function Header({ currentPage, pageChange }) {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto my-2 my-lg-0">
-              <Nav.Link
-                href="#about"
-                onClick={() => pageChange("About")}
-                className={
-                  currentPage === "About" ? "nav-link active" : "nav-link"
-                }
-              >
+              <Link className="nav-link" to="/about">
                 About
-              </Nav.Link>
-              <Nav.Link
-                href="#adopt"
-                onClick={() => pageChange("Adopt")}
-                className={
-                  currentPage === "Adopt" ? "nav-link active" : "nav-link"
-                }
-              >
+              </Link>
+              <Link className="nav-link" to="/adopt">
                 Adopt
-              </Nav.Link>
-              <Nav.Link
-                href="#contact"
-                onClick={() => pageChange("Contact")}
-                className={
-                  currentPage === "Contact" ? "nav-link active" : "nav-link"
-                }
-              >
+              </Link>
+              <Link className="nav-link" to="/contact">
                 Contact
-              </Nav.Link>
-              <Nav.Link
-                href="#donate"
-                onClick={() => pageChange("Donate")}
-                className={
-                  currentPage === "Donate" ? "nav-link active" : "nav-link"
-                }
-              >
+              </Link>
+              <Link className="nav-link" to="/donate">
                 Donate
-              </Nav.Link>
+              </Link>
               <NavDropdown
                 variant="outline-success dark"
                 className=" dropdown-menu-dark"
@@ -63,37 +40,32 @@ function Header({ currentPage, pageChange }) {
                 id="navbarDropdown"
               >
                 {Auth.loggedIn() ? (
-                  <NavDropdown.Item className='disabled'>
-                    Hello {sessionStorage.getItem("user")}
+                  <NavDropdown.Item className="nav-link disabled">
+                    {sessionStorage.getItem("user")}
                   </NavDropdown.Item>
                 ) : (
-                  <NavDropdown.Item
-                    onClick={() => pageChange("Login")}
-                    href="#login"
-                  >
+                  <Link className="nav-link" to="/login">
                     Login
-                  </NavDropdown.Item>
+                  </Link>
                 )}
                 <NavDropdown.Divider />
                 {Auth.loggedIn() ? (
                   <>
-                    <NavDropdown.Item
-                      onClick={() => pageChange("Profile")}
-                      href="#profile"
-                    >
+                    <Link className="nav-link" to="/profile">
                       Profile
-                    </NavDropdown.Item>
-                    <NavDropdown.Item onClick={() => Auth.logout()}>
+                    </Link>
+
+                    <NavDropdown.Item
+                      className="nav-link"
+                      onClick={() => Auth.logout()}
+                    >
                       Logout
                     </NavDropdown.Item>
                   </>
                 ) : (
-                  <NavDropdown.Item
-                    onClick={() => pageChange("Signup")}
-                    href="#signup"
-                  >
+                  <Link className="nav-link" to="/signup">
                     Signup
-                  </NavDropdown.Item>
+                  </Link>
                 )}
               </NavDropdown>
             </Nav>
