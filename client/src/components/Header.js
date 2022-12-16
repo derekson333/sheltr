@@ -49,7 +49,7 @@ function Header({ currentPage, pageChange }) {
                 <NavDropdown.Divider />
                 {Auth.loggedIn() ? (
                   <>
-                    <Link className="nav-link" to="/profile">
+                    <Link className="nav-link" to={`/profile/${sessionStorage.getItem("user")}`}>
                       Profile
                     </Link>
 

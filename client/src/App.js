@@ -99,7 +99,7 @@ function App() {
               element={<Signup />} 
             />
             <Route 
-              path="/profile" 
+              path="/profile/:name" 
               element={<Profile />} 
             />
             <Route 
