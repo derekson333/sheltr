@@ -42,7 +42,7 @@ const Animalcards = ({ animals }) => {
       </div>
       
       
-      {currentAnimals == false && (
+      {currentAnimals === false && (
         <h1 style={{ marginTop: "30px", textAlign: "center" }}>
           {" "}
           No results found
