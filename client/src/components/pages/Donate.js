@@ -30,7 +30,7 @@ const Donate = () => {
       const {
         unitAmount,
         currency
-      } = await fetch('/config')
+      } = await fetch('/donate')
                   .then(response => response.json());
       setAmount(unitAmount);
       setCurrency(currency);
