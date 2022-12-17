@@ -24,3 +24,11 @@ export const ADD_USER = gql`
   }
 `;
 
+export const MAKE_DONATION = gql`
+  mutation makeDonation($username: String!, $donationAmount: Float!) {
+    makeDonation(username: $username, donationAmount: $donationAmount) {
+      username
+      donations
+    }
+}
+`
