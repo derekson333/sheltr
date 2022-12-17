@@ -6,17 +6,46 @@ html {
   overflow-x: hidden;
 }
 
+h1 {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+p {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 110%;
+}
 footer {
+  background-color: rgb(255, 255, 255);
   clear: both;
   margin-bottom: 0;
-
   position: sticky;
 }
 
+header {
+  background:#646363;
+  background-color: rgb(0, 0, 0);
+
+}
+.flex-column {
+  background: linear-gradient(#51ff00, #0084ff);
+  background: linear-gradient(#5f5f5f5d, #41c6fabe);
+}
+.card {
+  margin:10%;
+  margin-top: 40px;
+}
+
+.card-body {
+  width: 90%;
+  margin: auto;
+}
 .nav-item .dropdown-menu {
   background: #646363;
 }
 
+.card-header {
+  background: linear-gradient(#2e3fff10, #93ffff0a);
+}
 .nav-item .dropdown-item {
   color: #ffffff;
 }
@@ -29,7 +58,7 @@ nav {
   position: relative;
   margin-top: -10px;
   width: 100%;
-  min-height: 200px;
+  min-height: 150px;
 }
 
 .margin-left {
@@ -68,18 +97,18 @@ nav {
   clear: both;
   margin: auto;
   width: 150%;
+  margin-bottom: 8%;
 }
 
 .animalcardimg {
-  width: 300px;
-  height: 300px;
+  height: 380px;
   object-fit: cover;
 }
 
 .animal {
   justify-content: center;
   width: 400px;
-  margin-left: 10%;
+  margin-bottom: 100px;
   margin-right: 30px;
 }
 
@@ -91,10 +120,18 @@ nav {
   max-width: 50%;
 }
 
+.selected-animal {
+  width: 300px;
+  margin: auto;
+  margin-top: 5%;
+}
+
 #icons {
   align-self: center;
   margin-left: 4%;
 }
+
+
 #content {
   min-height: calc(64vh);
 }
@@ -116,6 +153,10 @@ nav {
   -webkit-background-clip: text;
 }
 
+#viewing {
+  font-style: italic;
+  font-size: 130%;
+}
 #search {
   margin-left: 5%;
   width: 50%;
@@ -123,7 +164,7 @@ nav {
 
 #login-card {
   margin: auto;
-  margin-top: 20px;
+  margin-top: 40px;
   height: 400px;
   width: 50%;
   clear: both;

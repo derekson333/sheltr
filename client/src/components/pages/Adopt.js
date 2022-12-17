@@ -14,7 +14,7 @@ export default function Adopt() {
 
   return (
     <>
-      <div className="card bg-light mb-3">
+      <div className="shadow-lg card bg-light mb-3">
         <h1 className="card-header">Adopt Us</h1>
         <p className="card-body">
             Please browse through our animals who are currently looking for loving homes. 

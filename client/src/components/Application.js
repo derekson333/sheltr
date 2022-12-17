@@ -23,16 +23,17 @@ const Application = ({ name }) => {
   };
 
   return (
-    <div id="application-card" className="card bg-light mb-3">
+    <div id="application-card" className="shadow-lg card bg-light mb-3">
       <h4 className="card-header">Apply to Adopt {name}</h4>
       <Form className="card-body" onSubmit={handleApplicationSubmit}>
         <Form.Group>
           <span class="icon is-small is-left">
             <i class="mdi mdi-map-marker-outline"></i>
           </span>
-          <Form.Label className="shift-label" htmlFor="streetAddress">Street Address:</Form.Label>
+          <Form.Label className="shift-label" htmlFor="streetAddress">
+            Street Address:
+          </Form.Label>
           <Form.Control
-            type="text"
             placeholder=""
             onChange={(e) =>
               setApplicationData({
@@ -51,9 +52,10 @@ const Application = ({ name }) => {
           <span class="icon is-small is-left">
             <i class="mdi mdi-city"></i>
           </span>
-          <Form.Label className="shift-label"  htmlFor="city">City:</Form.Label>
+          <Form.Label className="shift-label" htmlFor="city">
+            City:
+          </Form.Label>
           <Form.Control
-            type="text"
             placeholder=""
             onChange={(e) =>
               setApplicationData({ ...applicationData, city: e.target.value })
@@ -69,9 +71,10 @@ const Application = ({ name }) => {
           <span class="icon is-small is-left">
             <i class="mdi mdi-home-group"></i>
           </span>
-          <Form.Label className="shift-label" htmlFor="state">State:</Form.Label>
+          <Form.Label className="shift-label" htmlFor="state">
+            State:
+          </Form.Label>
           <Form.Control
-            type="text"
             placeholder=""
             onChange={(e) =>
               setApplicationData({ ...applicationData, state: e.target.value })
@@ -87,9 +90,10 @@ const Application = ({ name }) => {
           <span class="icon is-small is-left">
             <i class="mdi mdi-zip-box"></i>
           </span>
-          <Form.Label className="shift-label" htmlFor="zip">Zip Code:</Form.Label>
+          <Form.Label className="shift-label" htmlFor="zip">
+            Zip Code:
+          </Form.Label>
           <Form.Control
-            type="number"
             placeholder=""
             onChange={(e) =>
               setApplicationData({ ...applicationData, zip: e.target.value })
@@ -105,9 +109,10 @@ const Application = ({ name }) => {
           <span class="icon is-small is-left">
             <i class="mdi mdi-phone"></i>
           </span>
-          <Form.Label className="shift-label" htmlFor="phone">Phone Number:</Form.Label>
+          <Form.Label className="shift-label" htmlFor="phone">
+            Phone Number:
+          </Form.Label>
           <Form.Control
-            type="number"
             placeholder=""
             onChange={(e) =>
               setApplicationData({ ...applicationData, phone: e.target.value })
@@ -127,7 +132,6 @@ const Application = ({ name }) => {
             How many children under 18 live in your home?
           </Form.Label>
           <Form.Control
-            type="number"
             placeholder={0}
             onChange={(e) =>
               setApplicationData({
@@ -146,11 +150,10 @@ const Application = ({ name }) => {
           <span class="icon is-small is-left">
             <i class="mdi mdi-dog-side"></i>
           </span>
-          <Form.Label className="shift-label"  htmlFor="numberOtherPets">
+          <Form.Label className="shift-label" htmlFor="numberOtherPets">
             How many other pets live in your home?
           </Form.Label>
           <Form.Control
-            type="number"
             placeholder={0}
             onChange={(e) =>
               setApplicationData({
@@ -170,7 +173,6 @@ const Application = ({ name }) => {
             If there are other pets in your home, what type of animals are they?
           </Form.Label>
           <Form.Control
-            type="text"
             placeholder=""
             onChange={(e) =>
               setApplicationData({
