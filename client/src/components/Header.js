@@ -39,7 +39,7 @@ function Header({ currentPage, pageChange }) {
               >
                 {Auth.loggedIn() ? (
                   <NavDropdown.Item className="nav-link disabled">
-                    {sessionStorage.getItem("user")}
+                    {localStorage.getItem("user")}
                   </NavDropdown.Item>
                 ) : (
                   <Link className="nav-link" to="/login">
