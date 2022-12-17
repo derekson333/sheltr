@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/config', async (req, res) => {
+app.get('/donate', async (req, res) => {
   const price = await stripe.prices.retrieve(process.env.PRICE);
 
   res.send({
