@@ -37,7 +37,8 @@ const Profile = () => {
             {user.username}!<br></br>
             {user.email}
             {user.applications}
-            {user.adoptions}
+            {user.adoptions}<br></br>
+            You have donated ${user.donations} to sheltr!
           </p>
           <div className="card-footer"></div>
         </div>
