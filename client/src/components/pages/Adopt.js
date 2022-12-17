@@ -13,7 +13,7 @@ export default function Adopt() {
   const animals = data?.animals || [];
 
   return (
-    <div>
+    <>
       <div className="card bg-light mb-3">
         <h1 className="card-header">Adopt Us</h1>
         <p className="card-body">
@@ -23,8 +23,7 @@ export default function Adopt() {
         </p>
         
       </div>
-      <div className="container">
-          {/* If the data is still loading, render a loading message */}
+      
           {loading ? (
             <div>Loading...</div>
           ) : (
@@ -32,8 +31,8 @@ export default function Adopt() {
           animals={animals}
           />
           )}
-        </div>
+        
         <div className="card-footer"></div>
-    </div>
+        </>
   );
 }

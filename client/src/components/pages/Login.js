@@ -21,8 +21,7 @@ const Login = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(userFormData);
-    sessionStorage.setItem('user', userFormData.username)
+    localStorage.setItem("user", userFormData.username);
 
     try {
       const { data } = await login({
@@ -42,13 +41,14 @@ const Login = () => {
 
   return (
     <>
-    <div id="login-card" className="card bg-light mb-3">
-      
-      {data ? (
-        <h4 className="bg-success card-header text-light">
-          Login Successful.{" "}
-        </h4>
-      ) : ( <h4 className="card-header">Login</h4> )}
+      <div id="login-card" className="card bg-light mb-3">
+        {data ? (
+          <h4 className="bg-success card-header text-light">
+            Login Successful.{" "}
+          </h4>
+        ) : (
+          <h4 className="card-header">Login</h4>
+        )}
         <Form
           className="card-body"
           noValidate
@@ -64,10 +64,12 @@ const Login = () => {
             Something went wrong with your login credentials!
           </Alert>
           <Form.Group>
+            <span class="icon is-small is-left">
+              <i class="mdi mdi-account-badge"></i>
+            </span>
             <Form.Label htmlFor="username">Username:</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Your user name"
               name="username"
               onChange={handleInputChange}
               value={userFormData.username}
@@ -78,6 +80,9 @@ const Login = () => {
             </Form.Control.Feedback>
           </Form.Group>
           <Form.Group>
+            <span class="icon is-small is-left">
+              <i class="mdi mdi-form-textbox-lock"></i>
+            </span>
             <Form.Label htmlFor="password">Password:</Form.Label>
             <Form.Control
               type="password"
@@ -92,24 +97,22 @@ const Login = () => {
             </Form.Control.Feedback>
           </Form.Group>
           <Button
-            disabled={
-              !(
-                userFormData.username &&
-                userFormData.password
-              )
-            }
+            disabled={!(userFormData.username && userFormData.password)}
             type="submit"
             variant="primary"
           >
             Submit
           </Button>
         </Form>
-      {error && (
-        <div style={{margin: '20px'}}className="card my-3 p-3 bg-danger text-white">
-          {error.message}
-        </div>
-      )}
-    </div>
+        {error && (
+          <div
+            style={{ margin: "20px" }}
+            className="card my-3 p-3 bg-danger text-white"
+          >
+            {error.message}
+          </div>
+        )}
+      </div>
     </>
   );
 };

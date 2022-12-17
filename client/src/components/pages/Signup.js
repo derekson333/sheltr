@@ -27,7 +27,6 @@ const Signup = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(userFormData);
     try {
       const { data } = await createUser({
         variables: { ...userFormData },
@@ -68,7 +67,10 @@ const Signup = () => {
           Something went wrong with your signup!
         </Alert>
         <Form.Group>
-          <Form.Label htmlFor="email">Email</Form.Label>
+          <span class="icon is-small is-left">
+            <i class="mdi mdi-email-plus"></i>
+          </span>
+          <Form.Label htmlFor="email">Email:</Form.Label>
           <Form.Control
             type="email"
             placeholder="email@example.com"
@@ -82,10 +84,12 @@ const Signup = () => {
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group>
+          <span class="icon is-small is-left">
+            <i class="mdi mdi-account-badge"></i>
+          </span>
           <Form.Label htmlFor="username">Username:</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Your username"
             name="username"
             onChange={handleInputChange}
             value={userFormData.username}
@@ -96,7 +100,10 @@ const Signup = () => {
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group>
-          <Form.Label htmlFor="password">Password</Form.Label>
+          <span class="icon is-small is-left">
+            <i class="mdi mdi-form-textbox-lock"></i>
+          </span>
+          <Form.Label htmlFor="password">Password:</Form.Label>
           <Form.Control
             type="password"
             placeholder="**********"
