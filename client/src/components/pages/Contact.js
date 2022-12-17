@@ -3,7 +3,7 @@ import React from "react";
 export default function Contact() {
   return (
     <div>
-      <div className="card bg-light mb-3">
+      <div className="shadow-lg card bg-light mb-3">
         <h1 className="card-header">Contact Us</h1>
         {/* This text and format is janky but it's better than ipsum lorem */}
         <div className="card-body">

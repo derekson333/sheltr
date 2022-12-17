@@ -407,6 +407,7 @@ pre {
 /* Custom */
 .donate-container {
   border: 1px solid #e8e8e8;
+  background-color: whitesmoke;
   border-radius: 6px;
   padding: 32px 28px;
   display: flex;
@@ -417,6 +418,12 @@ pre {
 
 .donate-container .pasha-image-stack {
   margin-top: 20px;
+}
+
+.donate-container h1 {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  font-size: 240%;
 }
 
 .donate-container:first-of-type {

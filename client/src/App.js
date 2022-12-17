@@ -61,7 +61,7 @@ function App() {
     <Router>
       <div className="flex-column justify-flex-start min-100-vh">
       <header>
-     <nav className="navbar navbar-expand-lg navbar-light bg-light">
+     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <Header/>
        </nav>
       </header>

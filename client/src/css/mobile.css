@@ -31,6 +31,16 @@
     grid-template-columns: repeat(1, 1fr);
   }
   .animal-card {
-    margin-left: -32px;
+    width: 100%;
+  }
+  .animal {
+    height: 200px;
+    width: 600px;
+  }
+  footer {
+    margin-left: -35px;
+  }
+  .selected-animal {
+    width: 100%;
   }
 }
