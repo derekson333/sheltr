@@ -40,7 +40,7 @@ const Login = () => {
   };
 
   return (
-    <>
+
       <div id="login-card" className="card bg-light mb-3">
         {data ? (
           <h4 className="bg-success card-header text-light">
@@ -69,7 +69,7 @@ const Login = () => {
             </span>
             <Form.Label htmlFor="username">Username:</Form.Label>
             <Form.Control
-              type="text"
+              placeholder="Enter your username"
               name="username"
               onChange={handleInputChange}
               value={userFormData.username}
@@ -113,7 +113,7 @@ const Login = () => {
           </div>
         )}
       </div>
-    </>
+   
   );
 };
 

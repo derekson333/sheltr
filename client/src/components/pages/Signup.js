@@ -89,7 +89,7 @@ const Signup = () => {
           </span>
           <Form.Label htmlFor="username">Username:</Form.Label>
           <Form.Control
-            type="text"
+            placeholder="Enter your username"
             name="username"
             onChange={handleInputChange}
             value={userFormData.username}

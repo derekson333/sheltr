@@ -41,16 +41,16 @@ const Donate = () => {
   return (
     <div className="sr-root">
       <div className="sr-main">
-        <section className="donate-container">
+        <section className="shadow-lg donate-container">
           <div>
             <h1>One-Time Donation</h1>
             <h4>Every dollar goes to caring for impossibly cute animals in need!</h4>
             <div className="pasha-image">
               <img
-                alt="Cowboy Kermit"
-                src={require("../../img/CowboyKermit.jpg")}
-                width="140"
-                height="160"
+                alt="Kitten"
+                src={require("../../img/kittn.jpeg")}
+                width="200"
+                height="200"
               />
             </div>
           </div>
@@ -82,7 +82,7 @@ const Donate = () => {
                 +
               </button>
             </div>
-            <p className="sr-legal-text">Number of copies (max 10)</p>
+            <p className="sr-legal-text">Quantity (max 10)</p>
 
             <button role="link" id="submit" type="submit">
               Buy {formatPrice({amount, currency, quantity})}

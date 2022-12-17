@@ -15,16 +15,10 @@ export default function Animal() {
   }
   return (
     <>
-      <div className="container selected-animal">
-        <div
-          key={animal._id}
-          className="card animal selected-animal"
-          style={{ maxWidth: "70%", maxHeight: "", margin: "20px" }}
-        >
-          <div className="animal-card card text-center">
+          <div className="shadow-lg selected-animal card text-center">
             <img
               alt="an adoptable pet"
-              className="card-img-top w-100 d-block animalcardimg"
+              className="card-img-top w-100 d-block selected-animal-img"
               src={animal.imgUrl}
             ></img>
             <div className="card-body">
@@ -48,9 +42,7 @@ export default function Animal() {
               </p>
             </div>
           </div>
-        </div>
-        <Application style={{ float: "right" }} name={animal.name} />
-      </div>
+        <Application name={animal.name} />
     </>
   );
 }
