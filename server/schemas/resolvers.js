@@ -51,10 +51,10 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
-    makeDonation: async (parent, {userId, donationAmount}) => {
+    makeDonation: async (parent, {username, donationAmount}) => {
         if (context.user) {
             return await User.findOneAndUpdate(
-                { _id: userId },
+                { username: username },
                 { $inc: { donations: donationAmount }},
                 { runValidators: true, new: true}
             )
