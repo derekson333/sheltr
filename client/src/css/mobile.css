@@ -1,22 +1,36 @@
-  
-  @media only screen and (max-width: 1250px) {
-    .animals {
-      grid-template-columns: repeat(3, 1fr);
-    }
+@media only screen and (max-width: 1250px) {
+  .animals {
+    margin-right: 7%;
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  @media only screen and (max-width: 950px) {
-    .animals {
-      grid-template-columns: repeat(2, 1fr);
-    }
+}
+
+@media only screen and (max-width: 950px) {
+  .animals {
+    margin-right: 10%;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  @media only screen and (max-width: 600px) {
-    .animals {
-      clear:both;
-      grid-template-columns: repeat(1, 1fr);
-    }
-    .animal-card {
-      margin: 0;
-    }
+}
+
+@media only screen and (max-width: 720px) {
+  .sr-root {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 48px 20px;
+    min-width: 320px;
   }
+  .animalcardsearch {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .animals {
+    margin: auto;
+    clear: both;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .animal-card {
+    margin-left: -32px;
+  }
+}
