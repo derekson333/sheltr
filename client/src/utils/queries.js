@@ -12,6 +12,7 @@ export const QUERY_USER = gql`
       adoptions {
         _id
       }
+      donations
     }
   }
 `;
@@ -28,6 +29,7 @@ export const QUERY_ME = gql`
       adoptions {
         _id
       }
+      donations
     }
   }
 `;
