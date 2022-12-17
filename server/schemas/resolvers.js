@@ -52,14 +52,14 @@ const resolvers = {
     },
 
     makeDonation: async (parent, {username, donationAmount}) => {
-        if (context.user) {
+        // if (context.user) {
             return await User.findOneAndUpdate(
                 { username: username },
                 { $inc: { donations: donationAmount }},
                 { runValidators: true, new: true}
             )
-        }
-        throw new AuthenticationError("Not logged in")
+        // }
+        // throw new AuthenticationError("Not logged in")
     },
 
     addAnimal: async (
