@@ -1,8 +1,12 @@
 import { React, useState } from "react";
 import { Form } from "react-bootstrap";
+import Auth from "../utils/auth";
+import { ADD_APPLICATION } from "../utils/mutations";
 
-const Application = ({ name }) => {
+const Application = ({ name, animalId }) => {
   const [applicationData, setApplicationData] = useState({
+    applicant: Auth.getProfile().data._id,
+    adoptee: animalId,
     streetAddress: "",
     city: "",
     state: "",
