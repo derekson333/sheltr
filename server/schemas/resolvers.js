@@ -80,9 +80,9 @@ const resolvers = {
       return await Animal.findOneAndDelete({ _id: animalId });
     },
 
-    addApplication: async (parent, { applicant, adoptee }, context) => {
+    addApplication: async (parent, { applicant, adoptee, streetAddress, city, state, zip, phone, children, numberOtherPets, typeOtherPets }, context) => {
       if (context.user) {
-        return await Application.create({ applicant, adoptee });
+        return await Application.create({ applicant, adoptee, streetAddress, city, state, zip, phone, children, numberOtherPets, typeOtherPets });
       }
 
       throw new AuthenticationError("Not logged in");
