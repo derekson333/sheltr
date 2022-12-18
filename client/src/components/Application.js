@@ -1,3 +1,4 @@
+import { useMutation } from "@apollo/client";
 import { React, useState } from "react";
 import { Form } from "react-bootstrap";
 import Auth from "../utils/auth";
@@ -17,10 +18,27 @@ const Application = ({ name, animalId }) => {
     typeOtherPets: "",
   });
 
-  const handleApplicationSubmit = (event) => {
+  const [addApplication] = useMutation(ADD_APPLICATION);
+
+  const handleApplicationSubmit = async (event) => {
     event.preventDefault();
     try {
       console.log(applicationData);
+      await addApplication({
+        variables: {...applicationData}
+      });
+      setApplicationData({
+        applicant: Auth.getProfile().data._id,
+        adoptee: animalId,
+        streetAddress: "",
+        city: "",
+        state: "",
+        zip: "",
+        phone: "",
+        children: 0,
+        numberOtherPets: 0,
+        typeOtherPets: "",
+      })
     } catch (err) {
       console.error(err);
     }
