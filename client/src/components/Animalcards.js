@@ -45,7 +45,7 @@ const Animalcards = ({ animals }) => {
         </InputGroup>
       </div>
 
-      {currentAnimals === false && (
+      {Object.keys(currentAnimals).length === 0 && (
         <h1 style={{ marginTop: "30px", textAlign: "center" }}>
           {" "}
           No results found
