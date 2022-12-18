@@ -23,7 +23,6 @@ const Application = ({ name, animalId }) => {
   const handleApplicationSubmit = async (event) => {
     event.preventDefault();
     try {
-      console.log(applicationData);
       await addApplication({
         variables: {...applicationData}
       });
