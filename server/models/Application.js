@@ -22,11 +22,11 @@ const applicationSchema = new Schema({
         required: true
     },
     zip: {
-        type: Number,
+        type: String,
         required: true
     },
     phone: {
-        type: Number,
+        type: String,
         required: true
     },
     children: {
