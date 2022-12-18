@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+import { useMutation } from "@apollo/client";
+import { QUERY_USER, QUERY_ME } from "../../utils/queries";
+import { MAKE_DONATION } from "../../utils/mutations";
+
 
 
 const Success = () => {
@@ -8,6 +12,8 @@ const Success = () => {
   const location = useLocation();
   const sessionId = location.search.replace('?session_id=', '');
   const donationAmount = session.amount_total / 100;
+
+  const username = session.user.username
 
   useEffect(() => {
     async function fetchSession() {
@@ -21,6 +27,9 @@ const Success = () => {
     }
     fetchSession();
   }, [sessionId]);
+
+  const [updateDonation] = useMutation(MAKE_DONATION)
+  updateDonation(username, donationAmount)
 
   return (
     <div className="card bg-grey">
