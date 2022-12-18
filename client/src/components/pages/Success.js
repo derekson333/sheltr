@@ -13,7 +13,7 @@ const Success = () => {
   const sessionId = location.search.replace('?session_id=', '');
   const donationAmount = session.amount_total / 100;
 
-  const username = session.user.username
+  const username = session.username
 
   useEffect(() => {
     async function fetchSession() {
