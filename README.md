@@ -37,7 +37,7 @@ Contact via information found in the "Contact" section of this README.
 Navigate to the app's URL, create an account, and browse animals available for adoption.
 Browse the different tabs to view the adopt, about, contact and donate page. On the 
 adopt page, there is a search bar that will recognize name, gender, animal type, and age.
-If a user is signed in they will be able to enter an application apon clicking
+If a user is signed in they will be able to enter an application upon clicking
 "adopt me" on the selected pet. When arriving to the donate page a user will see the option
 to donate up to 100$, in increments of 10. A user is also able to view their own profile
 under the account dropdown menu, which will display data regarding that accounts information,
@@ -46,8 +46,10 @@ donations and any adopted animals/applications.
 ## Technologies Used
 React  
 Bootstrap  
-JavaScript  
-Heroku deployment  
+JavaScript
+Stripe
+Heroku deployment
+
 
 ## Credits
 [Paul Pinard](https://github.com/pikaypi)  
