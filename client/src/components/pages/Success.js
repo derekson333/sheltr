@@ -11,8 +11,8 @@ const Success = () => {
   const location = useLocation();
   const sessionId = location.search.replace('?session_id=', '');
   const donationAmount = session.amount_total / 100;
-  // has placeholder accountname; will need to import from token, I
-  const username = "derekson333"
+  // shortcut to get username from localstorage
+  const username = localStorage.getItem("user")
   const [makeDonation, {data, loading, error}] = useMutation(MAKE_DONATION)
   
 
@@ -38,7 +38,7 @@ const Success = () => {
     <div className="card bg-grey">
       <div className="sr-main">
         <header className="card-header">
-          <h1>Thank you for your donation!</h1>
+          <h1>Thank you for your donation, {username}!</h1>
 
           <h3>Your donation of ${donationAmount} was successful.</h3>
         </header>
