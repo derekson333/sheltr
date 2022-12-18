@@ -8,6 +8,8 @@ This is an animal adoption website created by Dan Erekson, Paul Pinard, Ryan Jew
 The main features of the website are that a user can create, login and logout of their account. When a user is logged
 in, they have the option to submit an application to adopt an animal of their choosing. As well the user has the option
 of making donations, utilizing the Stripe payment system. 
+##
+![image](https://user-images.githubusercontent.com/104117927/208325306-0ab21681-0377-434b-b58f-d5b21cbb7474.png)
 
 ## TABLE OF CONTENTS
 * [Motivation](#motivation)
