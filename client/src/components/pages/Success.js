@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { useMutation } from "@apollo/client";
 import { MAKE_DONATION } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 
 
 
@@ -12,7 +13,7 @@ const Success = () => {
   const sessionId = location.search.replace('?session_id=', '');
   const donationAmount = session.amount_total / 100;
   // shortcut to get username from localstorage
-  const username = localStorage.getItem("user")
+  const username = Auth.getProfile().data.username;
   const [makeDonation] = useMutation(MAKE_DONATION)
   
 

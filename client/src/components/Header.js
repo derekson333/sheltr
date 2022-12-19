@@ -39,7 +39,7 @@ function Header({ currentPage, pageChange }) {
               >
                 {Auth.loggedIn() ? (
                   <NavDropdown.Item className="space-left nav-link disabled">
-                    {localStorage.getItem("user")}
+                    {Auth.getProfile().data.username}
                   </NavDropdown.Item>
                 ) : (
                   <Link className="space-left nav-link" to="/login">
