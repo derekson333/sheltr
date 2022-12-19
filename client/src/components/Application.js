@@ -29,6 +29,8 @@ const Application = ({ name, animalId }) => {
       setApplicationData({
         applicant: Auth.getProfile().data._id,
         adoptee: animalId,
+        firstName: "",
+        lastName: "",
         streetAddress: "",
         city: "",
         state: "",
@@ -50,6 +52,50 @@ const Application = ({ name, animalId }) => {
     >
       <h4 className="card-header">Apply to Adopt {name}</h4>
       <Form className="card-body" onSubmit={handleApplicationSubmit}>
+      <Form.Group>
+          <span className="icon is-small is-left">
+            <i className="mdi mdi-map-marker-outline"></i>
+          </span>
+          <Form.Label className="shift-label" htmlFor="firstName">
+            First Name:
+          </Form.Label>
+          <Form.Control
+            placeholder=""
+            onChange={(e) =>
+              setApplicationData({
+                ...applicationData,
+                firstName: e.target.value,
+              })
+            }
+            value={applicationData.firstName}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            First Name is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group>
+          <span className="icon is-small is-left">
+            <i className="mdi mdi-map-marker-outline"></i>
+          </span>
+          <Form.Label className="shift-label" htmlFor="lastName">
+            Last Name:
+          </Form.Label>
+          <Form.Control
+            placeholder=""
+            onChange={(e) =>
+              setApplicationData({
+                ...applicationData,
+                lastName: e.target.value,
+              })
+            }
+            value={applicationData.lastName}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Last name is required!
+          </Form.Control.Feedback>
+        </Form.Group>
         <Form.Group>
           <span className="icon is-small is-left">
             <i className="mdi mdi-map-marker-outline"></i>

@@ -9,6 +9,14 @@ const applicationSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Animal'
     },
+    firstName: {
+      type: String,
+      required: true
+    },
+    lastName: {
+      type: String,
+      required: true
+    },
     streetAddress: {
         type: String,
         required: true
