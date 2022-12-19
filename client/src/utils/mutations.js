@@ -34,14 +34,16 @@ export const MAKE_DONATION = gql`
 `;
 
 export const ADD_APPLICATION = gql`
-  mutation addApplication($applicant: ID!, $adoptee: ID!, $streetAddress: String!, $city: String!, $state: String!, $zip: String!, $phone: String!, $children: Int!, $numberOtherPets: Int!, $typeOtherPets: String) {
-    addApplication(applicant: $applicant, adoptee: $adoptee, streetAddress: $streetAddress, city: $city, state: $state, zip: $zip, phone: $phone, children: $children, numberOtherPets: $numberOtherPets, typeOtherPets: $typeOtherPets) {
+  mutation addApplication($applicant: ID!, $adoptee: ID!, $firstName: String!, $lastName: String!, $streetAddress: String!, $city: String!, $state: String!, $zip: String!, $phone: String!, $children: Int!, $numberOtherPets: Int!, $typeOtherPets: String) {
+    addApplication(applicant: $applicant, adoptee: $adoptee, firstName: $firstName, lastName: $lastName, streetAddress: $streetAddress, city: $city, state: $state, zip: $zip, phone: $phone, children: $children, numberOtherPets: $numberOtherPets, typeOtherPets: $typeOtherPets) {
       applicant {
         _id
       }
       adoptee {
         _id
       }
+      firstName
+      lastName
       streetAddress
       city
       state
