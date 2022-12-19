@@ -27,8 +27,8 @@ We were motivated to create this app to fill a need for our animal shelter by br
 Animal shelter websites are the perfect example of using a website to solve a real world problem. We have found some of 
 these websites could use a more appealing layout, and in that thought we decided to create our website, Sheltr. 
 
-## Deployed Site
-[sheltr.tech](https://sheltr.tech/)
+## Deployed
+[Deployed Link](https://sheltr.tech/)
 
 ## Contributing
 Contact via information found in the "Contact" section of this README.
@@ -44,16 +44,11 @@ under the account dropdown menu, which will display data regarding that accounts
 donations and any adopted animals/applications.
 
 ## Technologies Used
-* Node
-* React  
-* Bootstrap  
-* Express
-* Apollo
-* GraphQL
-* Mongoose
-* Heroku deployment
-* MongoDB Atlas
-* Stripe
+React  
+Bootstrap  
+JavaScript
+Stripe
+Heroku deployment
 
 
 ## Credits
