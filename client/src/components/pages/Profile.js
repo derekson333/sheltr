@@ -2,10 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
-
+import Auth from "../../utils/auth";
 const Profile = () => {
+  console.log(Auth.getToken())
   const { username: userParam } = useParams();
-
   // use this to determine if `useEffect()` hook needs to run again
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
