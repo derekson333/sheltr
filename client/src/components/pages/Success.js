@@ -13,7 +13,7 @@ const Success = () => {
   const donationAmount = session.amount_total / 100;
   // shortcut to get username from localstorage
   const username = localStorage.getItem("user")
-  const [makeDonation, {data, loading, error}] = useMutation(MAKE_DONATION)
+  const [makeDonation] = useMutation(MAKE_DONATION)
   
 
   useEffect(() => {
