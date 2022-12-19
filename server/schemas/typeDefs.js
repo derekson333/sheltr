@@ -31,8 +31,8 @@ const typeDefs = gql`
         streetAddress: String!
         city: String!
         state: String!
-        zip: Int!
-        phone: Int!
+        zip: String!
+        phone: String!
         children: Int!
         numberOtherPets: Int!
         typeOtherPets: String 
@@ -59,7 +59,7 @@ const typeDefs = gql`
         makeDonation(username: String!, donationAmount: Float!): User
         addAnimal(name: String!, age: Int!, sex: String!, species: String!, breed: String, familyFriendly: Boolean): Animal
         removeAnimal(id: ID!): Animal
-        addApplication(applicant: ID!, adoptee: ID!): Application
+        addApplication(applicant: ID!, adoptee: ID!, streetAddress: String!, city: String!, state: String!, zip: String!, phone: String!, children: Int!, numberOtherPets: Int!, typeOtherPets: String): Application
         login(username: String!, password: String!): Auth
     }
 `;
