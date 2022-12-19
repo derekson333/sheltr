@@ -80,8 +80,8 @@ const resolvers = {
       return await Animal.findOneAndDelete({ _id: animalId });
     },
 
-    addApplication: async (parent, { applicant, adoptee, streetAddress, city, state, zip, phone, children, numberOtherPets, typeOtherPets }, context) => {
-      const newApplication = await Application.create({ applicant, adoptee, streetAddress, city, state, zip, phone, children, numberOtherPets, typeOtherPets });
+    addApplication: async (parent, { applicant, adoptee, firstName, lastName, streetAddress, city, state, zip, phone, children, numberOtherPets, typeOtherPets }, context) => {
+      const newApplication = await Application.create({ applicant, adoptee, firstName, lastName, streetAddress, city, state, zip, phone, children, numberOtherPets, typeOtherPets });
       await User.findOneAndUpdate(
         { _id: newApplication.applicant },
         { $addToSet: { applications: newApplication._id }},
