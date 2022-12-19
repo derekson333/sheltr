@@ -24,7 +24,7 @@ const Application = ({ name, animalId }) => {
     event.preventDefault();
     try {
       await addApplication({
-        variables: {...applicationData}
+        variables: { ...applicationData }
       });
       setApplicationData({
         applicant: Auth.getProfile().data._id,
@@ -46,13 +46,11 @@ const Application = ({ name, animalId }) => {
   return (
     <div
       id="application-card"
-      className={auth.loggedIn() ? "shadow-lg card bg-light mb-3" : "hidden"}
+      className={Auth.loggedIn() ? "shadow-lg card bg-light mb-3" : "hidden"}
     >
       <h4 className="card-header">Apply to Adopt {name}</h4>
       <Form className="card-body" onSubmit={handleApplicationSubmit}>
         <Form.Group>
-          <span className="icon is-small is-left">
-            <i className="mdi mdi-map-marker-outline"></i>
           <span className="icon is-small is-left">
             <i className="mdi mdi-map-marker-outline"></i>
           </span>
@@ -77,8 +75,6 @@ const Application = ({ name, animalId }) => {
         <Form.Group>
           <span className="icon is-small is-left">
             <i className="mdi mdi-city"></i>
-          <span className="icon is-small is-left">
-            <i className="mdi mdi-city"></i>
           </span>
           <Form.Label className="shift-label" htmlFor="city">
             City:
@@ -96,8 +92,6 @@ const Application = ({ name, animalId }) => {
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group>
-          <span className="icon is-small is-left">
-            <i className="mdi mdi-home-group"></i>
           <span className="icon is-small is-left">
             <i className="mdi mdi-home-group"></i>
           </span>
@@ -119,8 +113,6 @@ const Application = ({ name, animalId }) => {
         <Form.Group>
           <span className="icon is-small is-left">
             <i className="mdi mdi-zip-box"></i>
-          <span className="icon is-small is-left">
-            <i className="mdi mdi-zip-box"></i>
           </span>
           <Form.Label className="shift-label" htmlFor="zip">
             Zip Code:
@@ -140,8 +132,6 @@ const Application = ({ name, animalId }) => {
         <Form.Group>
           <span className="icon is-small is-left">
             <i className="mdi mdi-phone"></i>
-          <span className="icon is-small is-left">
-            <i className="mdi mdi-phone"></i>
           </span>
           <Form.Label className="shift-label" htmlFor="phone">
             Phone Number:
@@ -159,8 +149,6 @@ const Application = ({ name, animalId }) => {
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group>
-          <span className="icon is-small is-left">
-            <i className="mdi mdi-human-male-child"></i>
           <span className="icon is-small is-left">
             <i className="mdi mdi-human-male-child"></i>
           </span>
@@ -183,8 +171,6 @@ const Application = ({ name, animalId }) => {
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group>
-          <span className="icon is-small is-left">
-            <i className="mdi mdi-dog-side"></i>
           <span className="icon is-small is-left">
             <i className="mdi mdi-dog-side"></i>
           </span>
