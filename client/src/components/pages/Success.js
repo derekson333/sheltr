@@ -23,6 +23,7 @@ const Success = () => {
         res.json()
       )
         .then((data) => {
+          makeDonation({variables: {username:username, donationAmount:donationAmount}})
           setSession(data);
         });
     }
@@ -32,7 +33,6 @@ const Success = () => {
   // runs but loops
   console.log(username)
   console.log(donationAmount)
-  makeDonation({variables: {username:username, donationAmount:donationAmount}})
 
   return (
     <div className="card bg-grey">
