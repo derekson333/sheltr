@@ -24,7 +24,7 @@ const Animalcards = ({ animals }) => {
   return (
     <>
       <div className="container animalcardsearch">
-        <InputGroup className="mb-3">
+        <InputGroup className="shadow-lg mb-3">
           <Form.Control
             type="search"
             placeholder="Find a new friend!"
@@ -34,16 +34,18 @@ const Animalcards = ({ animals }) => {
             onChange={(e) => setInputText(e.target.value)}
           />
           <Button
+            className="shadow-lg"
+            style={{marginLeft:"-20px"}}
             id="button-addon2"
             onClick={inputHandler}
-            variant="outline-success"
+            variant="primary"
           >
             Search
           </Button>
         </InputGroup>
       </div>
 
-      {currentAnimals === false && (
+      {Object.keys(currentAnimals).length === 0 && (
         <h1 style={{ marginTop: "30px", textAlign: "center" }}>
           {" "}
           No results found
@@ -53,10 +55,10 @@ const Animalcards = ({ animals }) => {
         {currentAnimals.map((animal) => (
           <div
             key={animal._id}
-            className="container animal-card"
+            className="container"
             style={{ maxWidth: "70%", maxHeight: "", marginTop: "20px" }}
           >
-            <div className="animal-card card text-center">
+            <div className="shadow-lg animal-card card text-center">
               <img
                 alt="an adoptable pet"
                 className="card-img-top w-100 d-block animalcardimg"

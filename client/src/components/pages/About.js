@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <div>
-      <div className="card bg-light mb-3">
+      <div className="shadow-lg card bg-light mb-3">
         <h1 className="card-header">About Us</h1>
         <p className="card-body">
             Welcome to sheltr, where you can connect with the newest furry addition to your home! We envision a world where

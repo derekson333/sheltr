@@ -13,7 +13,6 @@ const Login = () => {
   const [showAlert, setShowAlert] = useState(false);
 
   const [login, { error, data }] = useMutation(LOGIN_USER);
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
@@ -40,7 +39,7 @@ const Login = () => {
   };
 
   return (
-    <>
+
       <div id="login-card" className="card bg-light mb-3">
         {data ? (
           <h4 className="bg-success card-header text-light">
@@ -64,12 +63,12 @@ const Login = () => {
             Something went wrong with your login credentials!
           </Alert>
           <Form.Group>
-            <span class="icon is-small is-left">
-              <i class="mdi mdi-account-badge"></i>
+            <span className="icon is-small is-left">
+              <i className="mdi mdi-account-badge"></i>
             </span>
             <Form.Label htmlFor="username">Username:</Form.Label>
             <Form.Control
-              type="text"
+              placeholder="Enter your username"
               name="username"
               onChange={handleInputChange}
               value={userFormData.username}
@@ -80,8 +79,8 @@ const Login = () => {
             </Form.Control.Feedback>
           </Form.Group>
           <Form.Group>
-            <span class="icon is-small is-left">
-              <i class="mdi mdi-form-textbox-lock"></i>
+            <span className="icon is-small is-left">
+              <i className="mdi mdi-form-textbox-lock"></i>
             </span>
             <Form.Label htmlFor="password">Password:</Form.Label>
             <Form.Control
@@ -113,7 +112,7 @@ const Login = () => {
           </div>
         )}
       </div>
-    </>
+   
   );
 };
 

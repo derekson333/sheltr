@@ -38,30 +38,30 @@ function Header({ currentPage, pageChange }) {
                 id="navbarDropdown"
               >
                 {Auth.loggedIn() ? (
-                  <NavDropdown.Item className="nav-link disabled">
+                  <NavDropdown.Item className="space-left nav-link disabled">
                     {localStorage.getItem("user")}
                   </NavDropdown.Item>
                 ) : (
-                  <Link className="nav-link" to="/login">
+                  <Link className="space-left nav-link" to="/login">
                     Login
                   </Link>
                 )}
                 <NavDropdown.Divider />
                 {Auth.loggedIn() ? (
                   <>
-                    <Link className="nav-link" to="/profile">
+                    <Link className="space-left nav-link" to="/profile">
                       Profile
                     </Link>
 
                     <NavDropdown.Item
-                      className="nav-link"
+                      className="space-left nav-link"
                       onClick={() => Auth.logout()}
                     >
                       Logout
                     </NavDropdown.Item>
                   </>
                 ) : (
-                  <Link className="nav-link" to="/signup">
+                  <Link className="space-left nav-link" to="/signup">
                     Signup
                   </Link>
                 )}

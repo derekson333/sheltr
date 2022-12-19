@@ -17,7 +17,6 @@ function Footer() {
       <div id="icons" className="container-fluid text-center text-md-left">
         <div className="row">
           <div className="col-md-4 mt-md-0 mt-3"></div>
-          <hr className="clearfix w-100 d-md-none pb-3"></hr>
           <div className="col-md-1 mb-md-0 mb-2">
             <a
               href="https://github.com/derekson333/sheltr/"

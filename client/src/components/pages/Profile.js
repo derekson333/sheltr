@@ -2,10 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
-
+import Auth from "../../utils/auth";
 const Profile = () => {
+  console.log(Auth.getToken())
   const { username: userParam } = useParams();
-
   // use this to determine if `useEffect()` hook needs to run again
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
@@ -26,7 +26,7 @@ const Profile = () => {
   return (
     <div>
       <div className="flex-row justify-center mb-3">
-        <h2 style={{width: "200%"}}className="jumbotron col-12 col-md-10 bg-dark text-light p-3 mb-5">
+        <h2 id="viewing" style={{width: "200%"}}className="jumbotron col-12 col-md-10 bg-dark text-light p-3 mb-5">
           Viewing {`${user.username}'s` || "your"} profile.
         </h2>
 
