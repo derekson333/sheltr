@@ -38,11 +38,11 @@ const applicationSchema = new Schema({
         required: true
     },
     children: {
-        type: Number,
+        type: String,
         required: true
     },
     numberOtherPets: {
-        type: Number,
+        type: String,
         required: true
     },
     typeOtherPets: {

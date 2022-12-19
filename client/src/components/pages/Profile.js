@@ -4,7 +4,6 @@ import { useQuery } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
 import Auth from "../../utils/auth";
 const Profile = () => {
-  console.log(Auth.getToken())
   const { username: userParam } = useParams();
   // use this to determine if `useEffect()` hook needs to run again
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
@@ -36,8 +35,7 @@ const Profile = () => {
             Welcome,
             {user.username}!<br></br>
             {user.email}
-            {user.applications}
-            {user.adoptions}<br></br>
+            <br></br>
             You have donated ${user.donations} to sheltr!
           </p>
           <div className="card-footer"></div>

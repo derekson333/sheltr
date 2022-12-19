@@ -72,15 +72,6 @@
         "imgUrl": "https://cdn.filestackcontent.com/kWV83JVSQuyVtIksotRE"
     },
     {
-        "name": "Zazu",
-        "age": 1,
-        "sex": "male",
-        "animalType": "bird",
-        "breed": "African Red-Billed Hornbill",
-        "familyFriendly": true,
-        "imgUrl": "https://cdn.filestackcontent.com/djEML8FeSESEXdQ3en13"
-    },
-    {
         "name": "Cybird",
         "age": 2,
         "sex": "female",
@@ -88,23 +79,5 @@
         "breed": "Parrot",
         "familyFriendly": true,
         "imgUrl": "https://cdn.filestackcontent.com/uKUWkitTRWidD4HIbfpq"
-    },
-    {
-        "name": "Zina",
-        "age": 5,
-        "sex": "female",
-        "animalType": "cat",
-        "breed": "American Shorthair",
-        "familyFriendly": true,
-        "imgUrl": "https://cdn.filestackcontent.com/B6CfACggRxKwdcPCNLSd"
-    },
-    {
-        "name": "Felix",
-        "age": 12,
-        "sex": "male",
-        "animalType": "cat",
-        "breed": "Siberian",
-        "familyFriendly": true,
-        "imgUrl": "https://cdn.filestackcontent.com/Vqg2e5FThCRGrsPEh67W"
     }
 ]

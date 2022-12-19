@@ -24,7 +24,7 @@ const Application = ({ name, animalId }) => {
     event.preventDefault();
     try {
       await addApplication({
-        variables: { ...applicationData }
+        variables: { ...applicationData },
       });
       setApplicationData({
         applicant: Auth.getProfile().data._id,
@@ -39,7 +39,7 @@ const Application = ({ name, animalId }) => {
         children: 0,
         numberOtherPets: 0,
         typeOtherPets: "",
-      })
+      });
     } catch (err) {
       console.error(err);
     }
@@ -52,7 +52,7 @@ const Application = ({ name, animalId }) => {
     >
       <h4 className="card-header">Apply to Adopt {name}</h4>
       <Form className="card-body" onSubmit={handleApplicationSubmit}>
-      <Form.Group>
+        <Form.Group>
           <span className="icon is-small is-left">
             <i className="mdi mdi-map-marker-outline"></i>
           </span>
@@ -60,7 +60,6 @@ const Application = ({ name, animalId }) => {
             First Name:
           </Form.Label>
           <Form.Control
-            placeholder=""
             onChange={(e) =>
               setApplicationData({
                 ...applicationData,
@@ -82,7 +81,6 @@ const Application = ({ name, animalId }) => {
             Last Name:
           </Form.Label>
           <Form.Control
-            placeholder=""
             onChange={(e) =>
               setApplicationData({
                 ...applicationData,
@@ -104,7 +102,6 @@ const Application = ({ name, animalId }) => {
             Street Address:
           </Form.Label>
           <Form.Control
-            placeholder=""
             onChange={(e) =>
               setApplicationData({
                 ...applicationData,
@@ -126,7 +123,6 @@ const Application = ({ name, animalId }) => {
             City:
           </Form.Label>
           <Form.Control
-            placeholder=""
             onChange={(e) =>
               setApplicationData({ ...applicationData, city: e.target.value })
             }
@@ -145,7 +141,6 @@ const Application = ({ name, animalId }) => {
             State:
           </Form.Label>
           <Form.Control
-            placeholder=""
             onChange={(e) =>
               setApplicationData({ ...applicationData, state: e.target.value })
             }
@@ -164,7 +159,6 @@ const Application = ({ name, animalId }) => {
             Zip Code:
           </Form.Label>
           <Form.Control
-            placeholder=""
             onChange={(e) =>
               setApplicationData({ ...applicationData, zip: e.target.value })
             }
@@ -183,7 +177,6 @@ const Application = ({ name, animalId }) => {
             Phone Number:
           </Form.Label>
           <Form.Control
-            placeholder=""
             onChange={(e) =>
               setApplicationData({ ...applicationData, phone: e.target.value })
             }
@@ -202,7 +195,7 @@ const Application = ({ name, animalId }) => {
             How many children under 18 live in your home?
           </Form.Label>
           <Form.Control
-            placeholder={0}
+          type="text"
             onChange={(e) =>
               setApplicationData({
                 ...applicationData,
@@ -224,7 +217,7 @@ const Application = ({ name, animalId }) => {
             How many other pets live in your home?
           </Form.Label>
           <Form.Control
-            placeholder={0}
+          type="text"
             onChange={(e) =>
               setApplicationData({
                 ...applicationData,
@@ -243,7 +236,6 @@ const Application = ({ name, animalId }) => {
             If there are other pets in your home, what type of animals are they?
           </Form.Label>
           <Form.Control
-            placeholder=""
             onChange={(e) =>
               setApplicationData({
                 ...applicationData,
