@@ -28,7 +28,7 @@ const Success = () => {
         });
     }
     fetchSession();
-  }, [sessionId]);
+  }, [sessionId, username, donationAmount, makeDonation]);
 
   // runs but loops
   console.log(username)
