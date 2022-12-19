@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_ANIMAL } from "../../utils/queries";
 import Application from "../Application";
+import auth from "../../utils/auth";
 
 export default function Animal() {
   const { id } = useParams();
@@ -13,6 +14,17 @@ export default function Animal() {
   if (loading) {
     return <div>Loading...</div>;
   }
+  if (!auth.loggedIn()) {
+    return (
+      <div
+        style={{ margin: "20px", width: "250px"}}
+        className="card my-3 p-3 bg-danger text-white"
+      >
+        You must be logged in to see this page.
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="shadow-lg selected-animal card text-center">
