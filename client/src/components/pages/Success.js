@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+import { useMutation } from "@apollo/client";
+import { MAKE_DONATION } from "../../utils/mutations";
+import Auth from "../../utils/auth";
+
 
 
 const Success = () => {
@@ -8,6 +12,9 @@ const Success = () => {
   const location = useLocation();
   const sessionId = location.search.replace('?session_id=', '');
   const donationAmount = session.amount_total / 100;
+  const username = Auth.getProfile().data.username;
+  const [makeDonation] = useMutation(MAKE_DONATION)
+  
 
   useEffect(() => {
     async function fetchSession() {
@@ -16,17 +23,19 @@ const Success = () => {
         res.json()
       )
         .then((data) => {
+          makeDonation({variables: {username:username, donationAmount:donationAmount}})
           setSession(data);
         });
     }
     fetchSession();
-  }, [sessionId]);
+  }, [sessionId, username, donationAmount, makeDonation]);
 
+  
   return (
     <div className="card bg-grey">
       <div className="sr-main">
         <header className="card-header">
-          <h1>Thank you for your donation!</h1>
+          <h1>Thank you for your donation, {username}!</h1>
 
           <h3>Your donation of ${donationAmount} was successful.</h3>
         </header>
