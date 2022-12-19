@@ -1,12 +1,13 @@
+import { useMutation } from "@apollo/client";
 import { React, useState } from "react";
 import { Form } from "react-bootstrap";
-import { useQuery } from "@apollo/client";
-import { QUERY_USER } from "../utils/queries";
 import Auth from "../utils/auth";
-import auth from "../utils/auth";
+import { ADD_APPLICATION } from "../utils/mutations";
 
-const Application = ({ name }) => {
+const Application = ({ name, animalId }) => {
   const [applicationData, setApplicationData] = useState({
+    applicant: Auth.getProfile().data._id,
+    adoptee: animalId,
     streetAddress: "",
     city: "",
     state: "",
@@ -17,10 +18,26 @@ const Application = ({ name }) => {
     typeOtherPets: "",
   });
 
-  const handleApplicationSubmit = (event) => {
+  const [addApplication] = useMutation(ADD_APPLICATION);
+
+  const handleApplicationSubmit = async (event) => {
     event.preventDefault();
     try {
-      console.log(applicationData);
+      await addApplication({
+        variables: { ...applicationData }
+      });
+      setApplicationData({
+        applicant: Auth.getProfile().data._id,
+        adoptee: animalId,
+        streetAddress: "",
+        city: "",
+        state: "",
+        zip: "",
+        phone: "",
+        children: 0,
+        numberOtherPets: 0,
+        typeOtherPets: "",
+      })
     } catch (err) {
       console.error(err);
     }
@@ -29,7 +46,7 @@ const Application = ({ name }) => {
   return (
     <div
       id="application-card"
-      className={auth.loggedIn() ? "shadow-lg card bg-light mb-3" : "hidden"}
+      className={Auth.loggedIn() ? "shadow-lg card bg-light mb-3" : "hidden"}
     >
       <h4 className="card-header">Apply to Adopt {name}</h4>
       <Form className="card-body" onSubmit={handleApplicationSubmit}>

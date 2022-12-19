@@ -32,3 +32,24 @@ export const MAKE_DONATION = gql`
     }
   }
 `;
+
+export const ADD_APPLICATION = gql`
+  mutation addApplication($applicant: ID!, $adoptee: ID!, $streetAddress: String!, $city: String!, $state: String!, $zip: String!, $phone: String!, $children: Int!, $numberOtherPets: Int!, $typeOtherPets: String) {
+    addApplication(applicant: $applicant, adoptee: $adoptee, streetAddress: $streetAddress, city: $city, state: $state, zip: $zip, phone: $phone, children: $children, numberOtherPets: $numberOtherPets, typeOtherPets: $typeOtherPets) {
+      applicant {
+        _id
+      }
+      adoptee {
+        _id
+      }
+      streetAddress
+      city
+      state
+      zip
+      phone
+      children
+      numberOtherPets
+      typeOtherPets
+    }
+  }
+`;

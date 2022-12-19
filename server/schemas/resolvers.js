@@ -9,7 +9,7 @@ const resolvers = {
       return await User.find().populate("applications").populate("adoptions");
     },
     user: async (parent, { username }) => {
-      return await User.findOne({username})
+      return await User.findOne({ username })
         .populate("applications")
         .populate("adoptions");
     },
@@ -51,15 +51,15 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
-    makeDonation: async (parent, {username, donationAmount}) => {
-        // if (context.user) {
-            return await User.findOneAndUpdate(
-                { username: username },
-                { $inc: { donations: donationAmount }},
-                { runValidators: true, new: true}
-            )
-        // }
-        // throw new AuthenticationError("Not logged in")
+    makeDonation: async (parent, { username, donationAmount }) => {
+      // if (context.user) {
+      return await User.findOneAndUpdate(
+        { username: username },
+        { $inc: { donations: donationAmount } },
+        { runValidators: true, new: true }
+      )
+      // }
+      // throw new AuthenticationError("Not logged in")
     },
 
     addAnimal: async (
@@ -80,12 +80,18 @@ const resolvers = {
       return await Animal.findOneAndDelete({ _id: animalId });
     },
 
-    addApplication: async (parent, { applicant, adoptee }, context) => {
-      if (context.user) {
-        return await Application.create({ applicant, adoptee });
-      }
-
-      throw new AuthenticationError("Not logged in");
+    addApplication: async (parent, { applicant, adoptee, streetAddress, city, state, zip, phone, children, numberOtherPets, typeOtherPets }, context) => {
+      const newApplication = await Application.create({ applicant, adoptee, streetAddress, city, state, zip, phone, children, numberOtherPets, typeOtherPets });
+      await User.findOneAndUpdate(
+        { _id: newApplication.applicant },
+        { $addToSet: { applications: newApplication._id }},
+        { runValidators: true, new: true }
+      );
+      await Animal.findOneAndUpdate(
+        { _id: newApplication.adoptee },
+        { $addToSet: { applications: newApplication._id }},
+        { runValidators: true, new: true }
+      );
     },
 
     login: async (parent, { username, password }) => {
