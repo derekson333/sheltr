@@ -12,7 +12,6 @@ const Success = () => {
   const location = useLocation();
   const sessionId = location.search.replace('?session_id=', '');
   const donationAmount = session.amount_total / 100;
-  // shortcut to get username from localstorage
   const username = Auth.getProfile().data.username;
   const [makeDonation] = useMutation(MAKE_DONATION)
   
