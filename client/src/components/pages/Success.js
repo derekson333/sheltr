@@ -30,10 +30,7 @@ const Success = () => {
     fetchSession();
   }, [sessionId, username, donationAmount, makeDonation]);
 
-  // runs but loops
-  console.log(username)
-  console.log(donationAmount)
-
+  
   return (
     <div className="card bg-grey">
       <div className="sr-main">
